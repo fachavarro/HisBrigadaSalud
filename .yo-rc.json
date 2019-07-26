@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.osi.hisbrigadasalud",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "HisBrigadaSalud",
+    "packageName": "com.osi.hisbrigadasalud",
+    "packageFolder": "com/osi/hisbrigadasalud",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZDYxZTQxM2MzYjY3ZjI4Y2RhOTFhMjYxMTZjNjBkMzNiNzA5M2MzYzVmZDgzZTk3ZDEwYWFlYjFiNjgyNGE3ZTdlN2EwZWE3YmMwZGQ3NmI5NTg3YmMwMzhjYTVhNWM5ODM2YjI5Nzc2MmUzYTNjMzQ2NTRhMGE2NWYxZGJkZWU=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": ["es"]
+  }
+}
