@@ -1,0 +1,33 @@
+{
+  "hisBrigadaSaludApp": {
+    "usuario": {
+      "home": {
+        "title": "Usuarios",
+        "createLabel": "Crear nuevo Usuario",
+        "createOrEditLabel": "Crear o editar Usuario",
+        "notFound": "No Usuario found"
+      },
+      "created": "Un nuevo Usuario ha sido creado con el identificador {{ param }}",
+      "updated": "Un Usuario ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Usuario ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Usuario {{ id }}?"
+      },
+      "detail": {
+        "title": "Usuario"
+      },
+      "tipoDoc": "Tipo Doc",
+      "numeroDocumento": "Numero Documento",
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "genero": "Genero",
+      "especialidad": "Especialidad",
+      "nombreUsuario": "Nombre Usuario",
+      "contrasena": "Contrasena",
+      "cargadoSistema": "Cargado Sistema",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "atencion": "Atencion"
+    }
+  }
+}

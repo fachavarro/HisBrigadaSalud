@@ -127,7 +127,7 @@ module.exports = options => ({
       chunksSortMode: 'dependency',
       inject: 'body'
     }),
-    new BaseHrefWebpackPlugin({ baseHref: '/' }),
+    new BaseHrefWebpackPlugin({ baseHref: '/HisBS' }),
     new MergeJsonWebpackPlugin({
       output: {
         groupBy: [

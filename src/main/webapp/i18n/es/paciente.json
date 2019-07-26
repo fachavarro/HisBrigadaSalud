@@ -1,0 +1,38 @@
+{
+  "hisBrigadaSaludApp": {
+    "paciente": {
+      "home": {
+        "title": "Pacientes",
+        "createLabel": "Crear nuevo Paciente",
+        "createOrEditLabel": "Crear o editar Paciente",
+        "notFound": "No Paciente found"
+      },
+      "created": "Un nuevo Paciente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Paciente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Paciente ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Paciente {{ id }}?"
+      },
+      "detail": {
+        "title": "Paciente"
+      },
+      "tipoDoc": "Tipo Doc",
+      "numeroDocumento": "Numero Documento",
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "genero": "Genero",
+      "fechaNacimiento": "Fecha Nacimiento",
+      "acudiente": "Acudiente",
+      "ocupacion": "Ocupacion",
+      "afiliadoSSS": "Afiliado SSS",
+      "cualSSS": "Cual SSS",
+      "nacionalidad": "Nacionalidad",
+      "barrioVive": "Barrio Vive",
+      "numeroTelefono": "Numero Telefono",
+      "cargadoSistema": "Cargado Sistema",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "atencion": "Atencion"
+    }
+  }
+}

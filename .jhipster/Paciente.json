@@ -1,0 +1,108 @@
+{
+    "name": "Paciente",
+    "fields": [
+        {
+            "fieldName": "tipoDoc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroDocumento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "apellido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "genero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaNacimiento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "acudiente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ocupacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "afiliadoSSS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cualSSS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nacionalidad",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "barrioVive",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroTelefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cargadoSistema",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updatedAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "atencion",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "atencion",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190726194415",
+    "entityTableName": "paciente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

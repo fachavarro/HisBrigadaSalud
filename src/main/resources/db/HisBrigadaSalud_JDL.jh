@@ -1,0 +1,70 @@
+
+
+entity Brigada {
+	descripcion String required,
+    lugar String required,
+    ciudad String required,
+    fechai Instant required,
+    fechaf Instant required,
+    cargadoSistema Boolean,
+    createdAt LocalDate,
+    updatedAt LocalDate
+}
+
+entity ServidorAPI {
+	protocolo String required,
+    server String required,
+    port String,
+    estado String,
+    cargadoSistema Boolean,
+    createdAt Instant,
+    updatedAt Instant,
+}
+
+entity Usuario {
+	tipoDoc String required,
+    numeroDocumento String required,
+    nombre String required,
+    apellido String required,
+    genero String required,
+    especialidad String required,
+    nombreUsuario String required,
+    contrasena String required,
+    cargadoSistema Boolean,
+    createdAt Instant,
+    updatedAt Instant
+}
+
+entity Paciente {
+	tipoDoc String required,
+    numeroDocumento String required,
+    nombre String required,
+    apellido String required,
+    genero String required,
+    fechaNacimiento String required,
+    acudiente String, 
+    ocupacion String,
+    afiliadoSSS String,
+    cualSSS String,
+	nacionalidad String required,
+    barrioVive String, 
+    numeroTelefono String,
+    cargadoSistema Boolean,
+    createdAt Instant,
+    updatedAt Instant,
+}
+
+entity Atencion{
+	fecha Instant required,
+    especialidad String required,
+    otraEspecialidad String,
+    createdAt Instant,
+	updatedAt Instant
+}
+relationship OneToOne {
+	Atencion to Brigada,
+    Atencion to Paciente,
+    Atencion to Usuario
+}
+
+

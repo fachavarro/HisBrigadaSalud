@@ -1,0 +1,30 @@
+{
+  "hisBrigadaSaludApp": {
+    "brigada": {
+      "home": {
+        "title": "Brigadas",
+        "createLabel": "Crear nuevo Brigada",
+        "createOrEditLabel": "Crear o editar Brigada",
+        "notFound": "No Brigada found"
+      },
+      "created": "Un nuevo Brigada ha sido creado con el identificador {{ param }}",
+      "updated": "Un Brigada ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Brigada ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Brigada {{ id }}?"
+      },
+      "detail": {
+        "title": "Brigada"
+      },
+      "descripcion": "Descripcion",
+      "lugar": "Lugar",
+      "ciudad": "Ciudad",
+      "fechai": "Fechai",
+      "fechaf": "Fechaf",
+      "cargadoSistema": "Cargado Sistema",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "atencion": "Atencion"
+    }
+  }
+}

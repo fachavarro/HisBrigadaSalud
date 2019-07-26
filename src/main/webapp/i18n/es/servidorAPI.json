@@ -1,0 +1,28 @@
+{
+  "hisBrigadaSaludApp": {
+    "servidorAPI": {
+      "home": {
+        "title": "Servidor APIS",
+        "createLabel": "Crear nuevo Servidor API",
+        "createOrEditLabel": "Crear o editar Servidor API",
+        "notFound": "No Servidor API found"
+      },
+      "created": "Un nuevo Servidor API ha sido creado con el identificador {{ param }}",
+      "updated": "Un Servidor API ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Servidor API ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Servidor API {{ id }}?"
+      },
+      "detail": {
+        "title": "Servidor API"
+      },
+      "protocolo": "Protocolo",
+      "server": "Server",
+      "port": "Port",
+      "estado": "Estado",
+      "cargadoSistema": "Cargado Sistema",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  }
+}
