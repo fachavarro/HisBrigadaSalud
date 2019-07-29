@@ -179,7 +179,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {brigadas
                       ? brigadas.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.descripcion}
                           </option>
                         ))
                       : null}
@@ -194,7 +194,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {pacientes
                       ? pacientes.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.nombre} {otherEntity.apellido}
                           </option>
                         ))
                       : null}
@@ -209,7 +209,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {usuarios
                       ? usuarios.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.nombre} {otherEntity.apellido}
                           </option>
                         ))
                       : null}

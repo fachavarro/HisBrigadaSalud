@@ -67,15 +67,15 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.brigada">Brigada</Translate>
             </dt>
-            <dd>{atencionEntity.brigada ? atencionEntity.brigada.id : ''}</dd>
+            <dd>{atencionEntity.brigada ? atencionEntity.brigada.descripcion : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.paciente">Paciente</Translate>
             </dt>
-            <dd>{atencionEntity.paciente ? atencionEntity.paciente.id : ''}</dd>
+            <dd>{atencionEntity.paciente ? atencionEntity.paciente.nombre+' '+atencionEntity.paciente.apellido : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.usuario">Usuario</Translate>
             </dt>
-            <dd>{atencionEntity.usuario ? atencionEntity.usuario.id : ''}</dd>
+            <dd>{atencionEntity.usuario ? atencionEntity.usuario.nombre+' '+atencionEntity.usuario.apellido : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/atencion" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

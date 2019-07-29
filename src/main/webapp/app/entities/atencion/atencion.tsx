@@ -85,9 +85,9 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>
                       <TextFormat type="date" value={atencion.updatedAt} format={APP_DATE_FORMAT} />
                     </td>
-                    <td>{atencion.brigada ? <Link to={`brigada/${atencion.brigada.id}`}>{atencion.brigada.id}</Link> : ''}</td>
-                    <td>{atencion.paciente ? <Link to={`paciente/${atencion.paciente.id}`}>{atencion.paciente.id}</Link> : ''}</td>
-                    <td>{atencion.usuario ? <Link to={`usuario/${atencion.usuario.id}`}>{atencion.usuario.id}</Link> : ''}</td>
+                    <td>{atencion.brigada ? <Link to={`brigada/${atencion.brigada.id}`}>{atencion.brigada.descripcion}</Link> : ''}</td>
+                    <td>{atencion.paciente ? <Link to={`paciente/${atencion.paciente.id}`}>{atencion.paciente.nombre} {atencion.paciente.apellido}</Link> : ''}</td>
+                    <td>{atencion.usuario ? <Link to={`usuario/${atencion.usuario.id}`}>{atencion.usuario.nombre} {atencion.usuario.apellido}</Link> : ''}</td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${atencion.id}`} color="info" size="sm">
