@@ -12,7 +12,6 @@ import { IUsuario } from 'app/shared/model/usuario.model';
 // tslint:disable-next-line:no-unused-variable
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 
-
 export interface IUsuarioProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 
 export class Usuario extends React.Component<IUsuarioProps> {
