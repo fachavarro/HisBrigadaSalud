@@ -32,9 +32,6 @@ public class ServidorAPI implements Serializable {
     @Field("estado")
     private String estado;
 
-    @Field("cargado_sistema")
-    private Boolean cargadoSistema;
-
     @Field("created_at")
     private Instant createdAt;
 
@@ -102,19 +99,6 @@ public class ServidorAPI implements Serializable {
         this.estado = estado;
     }
 
-    public Boolean isCargadoSistema() {
-        return cargadoSistema;
-    }
-
-    public ServidorAPI cargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-        return this;
-    }
-
-    public void setCargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-    }
-
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -166,7 +150,6 @@ public class ServidorAPI implements Serializable {
             ", server='" + getServer() + "'" +
             ", port='" + getPort() + "'" +
             ", estado='" + getEstado() + "'" +
-            ", cargadoSistema='" + isCargadoSistema() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
             "}";

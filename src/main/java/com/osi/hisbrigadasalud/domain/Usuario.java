@@ -52,9 +52,6 @@ public class Usuario implements Serializable {
     @Field("contrasena")
     private String contrasena;
 
-    @Field("cargado_sistema")
-    private Boolean cargadoSistema;
-
     @Field("created_at")
     private Instant createdAt;
 
@@ -179,19 +176,6 @@ public class Usuario implements Serializable {
         this.contrasena = contrasena;
     }
 
-    public Boolean isCargadoSistema() {
-        return cargadoSistema;
-    }
-
-    public Usuario cargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-        return this;
-    }
-
-    public void setCargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-    }
-
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -260,7 +244,6 @@ public class Usuario implements Serializable {
             ", especialidad='" + getEspecialidad() + "'" +
             ", nombreUsuario='" + getNombreUsuario() + "'" +
             ", contrasena='" + getContrasena() + "'" +
-            ", cargadoSistema='" + isCargadoSistema() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
             "}";

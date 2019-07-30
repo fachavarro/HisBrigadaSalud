@@ -24,10 +24,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "cargadoSistema",
-            "fieldType": "Boolean"
-        },
-        {
             "fieldName": "createdAt",
             "fieldType": "Instant"
         },
@@ -37,7 +33,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190726194413",
+    "changelogDate": "20190729190029",
     "entityTableName": "servidor_api",
     "dto": "no",
     "pagination": "no",

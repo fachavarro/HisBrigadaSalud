@@ -203,12 +203,6 @@ export class UsuarioUpdate extends React.Component<IUsuarioUpdateProps, IUsuario
                   />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="cargadoSistemaLabel" check>
-                    <AvInput id="usuario-cargadoSistema" type="checkbox" className="form-control" name="cargadoSistema" />
-                    <Translate contentKey="hisBrigadaSaludApp.usuario.cargadoSistema">Cargado Sistema</Translate>
-                  </Label>
-                </AvGroup>
-                <AvGroup>
                   <Label id="createdAtLabel" for="usuario-createdAt">
                     <Translate contentKey="hisBrigadaSaludApp.usuario.createdAt">Created At</Translate>
                   </Label>

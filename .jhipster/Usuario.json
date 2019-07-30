@@ -58,10 +58,6 @@
             ]
         },
         {
-            "fieldName": "cargadoSistema",
-            "fieldType": "Boolean"
-        },
-        {
             "fieldName": "createdAt",
             "fieldType": "Instant"
         },
@@ -79,7 +75,7 @@
             "ownerSide": false
         }
     ],
-    "changelogDate": "20190726194414",
+    "changelogDate": "20190729190030",
     "entityTableName": "usuario",
     "dto": "no",
     "pagination": "no",

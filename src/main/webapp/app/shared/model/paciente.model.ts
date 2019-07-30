@@ -11,17 +11,16 @@ export interface IPaciente {
   fechaNacimiento?: string;
   acudiente?: string;
   ocupacion?: string;
-  afiliadoSSS?: string;
+  afiliadoSSS?: boolean;
   cualSSS?: string;
   nacionalidad?: string;
   barrioVive?: string;
   numeroTelefono?: string;
-  cargadoSistema?: boolean;
   createdAt?: Moment;
   updatedAt?: Moment;
   atencion?: IAtencion;
 }
 
 export const defaultValue: Readonly<IPaciente> = {
-  cargadoSistema: false
+  afiliadoSSS: false
 };

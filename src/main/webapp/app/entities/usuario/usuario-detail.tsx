@@ -77,12 +77,6 @@ export class UsuarioDetail extends React.Component<IUsuarioDetailProps> {
             </dt>
             <dd>{usuarioEntity.contrasena}</dd>
             <dt>
-              <span id="cargadoSistema">
-                <Translate contentKey="hisBrigadaSaludApp.usuario.cargadoSistema">Cargado Sistema</Translate>
-              </span>
-            </dt>
-            <dd>{usuarioEntity.cargadoSistema ? 'true' : 'false'}</dd>
-            <dt>
               <span id="createdAt">
                 <Translate contentKey="hisBrigadaSaludApp.usuario.createdAt">Created At</Translate>
               </span>

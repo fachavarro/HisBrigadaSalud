@@ -189,10 +189,10 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                   <AvField id="paciente-ocupacion" type="text" name="ocupacion" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="afiliadoSSSLabel" for="paciente-afiliadoSSS">
+                  <Label id="afiliadoSSSLabel" check>
+                    <AvInput id="paciente-afiliadoSSS" type="checkbox" className="form-control" name="afiliadoSSS" />
                     <Translate contentKey="hisBrigadaSaludApp.paciente.afiliadoSSS">Afiliado SSS</Translate>
                   </Label>
-                  <AvField id="paciente-afiliadoSSS" type="text" name="afiliadoSSS" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="cualSSSLabel" for="paciente-cualSSS">
@@ -224,12 +224,6 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                     <Translate contentKey="hisBrigadaSaludApp.paciente.numeroTelefono">Numero Telefono</Translate>
                   </Label>
                   <AvField id="paciente-numeroTelefono" type="text" name="numeroTelefono" />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="cargadoSistemaLabel" check>
-                    <AvInput id="paciente-cargadoSistema" type="checkbox" className="form-control" name="cargadoSistema" />
-                    <Translate contentKey="hisBrigadaSaludApp.paciente.cargadoSistema">Cargado Sistema</Translate>
-                  </Label>
                 </AvGroup>
                 <AvGroup>
                   <Label id="createdAtLabel" for="paciente-createdAt">

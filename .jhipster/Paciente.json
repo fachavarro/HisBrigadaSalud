@@ -53,7 +53,7 @@
         },
         {
             "fieldName": "afiliadoSSS",
-            "fieldType": "String"
+            "fieldType": "Boolean"
         },
         {
             "fieldName": "cualSSS",
@@ -75,10 +75,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "cargadoSistema",
-            "fieldType": "Boolean"
-        },
-        {
             "fieldName": "createdAt",
             "fieldType": "Instant"
         },
@@ -96,7 +92,7 @@
             "ownerSide": false
         }
     ],
-    "changelogDate": "20190726194415",
+    "changelogDate": "20190729190031",
     "entityTableName": "paciente",
     "dto": "no",
     "pagination": "no",

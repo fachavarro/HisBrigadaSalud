@@ -58,9 +58,6 @@ public class UsuarioResourceIT {
     private static final String DEFAULT_CONTRASENA = "AAAAAAAAAA";
     private static final String UPDATED_CONTRASENA = "BBBBBBBBBB";
 
-    private static final Boolean DEFAULT_CARGADO_SISTEMA = false;
-    private static final Boolean UPDATED_CARGADO_SISTEMA = true;
-
     private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -114,7 +111,6 @@ public class UsuarioResourceIT {
             .especialidad(DEFAULT_ESPECIALIDAD)
             .nombreUsuario(DEFAULT_NOMBRE_USUARIO)
             .contrasena(DEFAULT_CONTRASENA)
-            .cargadoSistema(DEFAULT_CARGADO_SISTEMA)
             .createdAt(DEFAULT_CREATED_AT)
             .updatedAt(DEFAULT_UPDATED_AT);
         return usuario;
@@ -135,7 +131,6 @@ public class UsuarioResourceIT {
             .especialidad(UPDATED_ESPECIALIDAD)
             .nombreUsuario(UPDATED_NOMBRE_USUARIO)
             .contrasena(UPDATED_CONTRASENA)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
         return usuario;
@@ -169,7 +164,6 @@ public class UsuarioResourceIT {
         assertThat(testUsuario.getEspecialidad()).isEqualTo(DEFAULT_ESPECIALIDAD);
         assertThat(testUsuario.getNombreUsuario()).isEqualTo(DEFAULT_NOMBRE_USUARIO);
         assertThat(testUsuario.getContrasena()).isEqualTo(DEFAULT_CONTRASENA);
-        assertThat(testUsuario.isCargadoSistema()).isEqualTo(DEFAULT_CARGADO_SISTEMA);
         assertThat(testUsuario.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testUsuario.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
     }
@@ -347,7 +341,6 @@ public class UsuarioResourceIT {
             .andExpect(jsonPath("$.[*].especialidad").value(hasItem(DEFAULT_ESPECIALIDAD.toString())))
             .andExpect(jsonPath("$.[*].nombreUsuario").value(hasItem(DEFAULT_NOMBRE_USUARIO.toString())))
             .andExpect(jsonPath("$.[*].contrasena").value(hasItem(DEFAULT_CONTRASENA.toString())))
-            .andExpect(jsonPath("$.[*].cargadoSistema").value(hasItem(DEFAULT_CARGADO_SISTEMA.booleanValue())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }
@@ -370,7 +363,6 @@ public class UsuarioResourceIT {
             .andExpect(jsonPath("$.especialidad").value(DEFAULT_ESPECIALIDAD.toString()))
             .andExpect(jsonPath("$.nombreUsuario").value(DEFAULT_NOMBRE_USUARIO.toString()))
             .andExpect(jsonPath("$.contrasena").value(DEFAULT_CONTRASENA.toString()))
-            .andExpect(jsonPath("$.cargadoSistema").value(DEFAULT_CARGADO_SISTEMA.booleanValue()))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
             .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
     }
@@ -400,7 +392,6 @@ public class UsuarioResourceIT {
             .especialidad(UPDATED_ESPECIALIDAD)
             .nombreUsuario(UPDATED_NOMBRE_USUARIO)
             .contrasena(UPDATED_CONTRASENA)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
 
@@ -421,7 +412,6 @@ public class UsuarioResourceIT {
         assertThat(testUsuario.getEspecialidad()).isEqualTo(UPDATED_ESPECIALIDAD);
         assertThat(testUsuario.getNombreUsuario()).isEqualTo(UPDATED_NOMBRE_USUARIO);
         assertThat(testUsuario.getContrasena()).isEqualTo(UPDATED_CONTRASENA);
-        assertThat(testUsuario.isCargadoSistema()).isEqualTo(UPDATED_CARGADO_SISTEMA);
         assertThat(testUsuario.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testUsuario.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
     }

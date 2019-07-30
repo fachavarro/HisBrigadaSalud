@@ -51,6 +51,8 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
   saveEntity = (event, errors, values) => {
     values.fechai = convertDateTimeToServer(values.fechai);
     values.fechaf = convertDateTimeToServer(values.fechaf);
+    values.createdAt = convertDateTimeToServer(values.createdAt);
+    values.updatedAt = convertDateTimeToServer(values.updatedAt);
 
     if (errors.length === 0) {
       const { brigadaEntity } = this.props;
@@ -170,22 +172,30 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
                   />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="cargadoSistemaLabel" check>
-                    <AvInput id="brigada-cargadoSistema" type="checkbox" className="form-control" name="cargadoSistema" />
-                    <Translate contentKey="hisBrigadaSaludApp.brigada.cargadoSistema">Cargado Sistema</Translate>
-                  </Label>
-                </AvGroup>
-                <AvGroup>
                   <Label id="createdAtLabel" for="brigada-createdAt">
                     <Translate contentKey="hisBrigadaSaludApp.brigada.createdAt">Created At</Translate>
                   </Label>
-                  <AvField id="brigada-createdAt" type="date" className="form-control" name="createdAt" />
+                  <AvInput
+                    id="brigada-createdAt"
+                    type="datetime-local"
+                    className="form-control"
+                    name="createdAt"
+                    placeholder={'YYYY-MM-DD HH:mm'}
+                    value={isNew ? null : convertDateTimeFromServer(this.props.brigadaEntity.createdAt)}
+                  />
                 </AvGroup>
                 <AvGroup>
                   <Label id="updatedAtLabel" for="brigada-updatedAt">
                     <Translate contentKey="hisBrigadaSaludApp.brigada.updatedAt">Updated At</Translate>
                   </Label>
-                  <AvField id="brigada-updatedAt" type="date" className="form-control" name="updatedAt" />
+                  <AvInput
+                    id="brigada-updatedAt"
+                    type="datetime-local"
+                    className="form-control"
+                    name="updatedAt"
+                    placeholder={'YYYY-MM-DD HH:mm'}
+                    value={isNew ? null : convertDateTimeFromServer(this.props.brigadaEntity.updatedAt)}
+                  />
                 </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/brigada" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />

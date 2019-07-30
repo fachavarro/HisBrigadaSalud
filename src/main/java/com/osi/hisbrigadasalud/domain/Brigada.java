@@ -8,7 +8,6 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.time.LocalDate;
 
 /**
  * A Brigada.
@@ -41,14 +40,11 @@ public class Brigada implements Serializable {
     @Field("fechaf")
     private Instant fechaf;
 
-    @Field("cargado_sistema")
-    private Boolean cargadoSistema;
-
     @Field("created_at")
-    private LocalDate createdAt;
+    private Instant createdAt;
 
     @Field("updated_at")
-    private LocalDate updatedAt;
+    private Instant updatedAt;
 
     @DBRef
     @Field("atencion")
@@ -129,42 +125,29 @@ public class Brigada implements Serializable {
         this.fechaf = fechaf;
     }
 
-    public Boolean isCargadoSistema() {
-        return cargadoSistema;
-    }
-
-    public Brigada cargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-        return this;
-    }
-
-    public void setCargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-    }
-
-    public LocalDate getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public Brigada createdAt(LocalDate createdAt) {
+    public Brigada createdAt(Instant createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    public void setCreatedAt(LocalDate createdAt) {
+    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDate getUpdatedAt() {
+    public Instant getUpdatedAt() {
         return updatedAt;
     }
 
-    public Brigada updatedAt(LocalDate updatedAt) {
+    public Brigada updatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    public void setUpdatedAt(LocalDate updatedAt) {
+    public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -207,7 +190,6 @@ public class Brigada implements Serializable {
             ", ciudad='" + getCiudad() + "'" +
             ", fechai='" + getFechai() + "'" +
             ", fechaf='" + getFechaf() + "'" +
-            ", cargadoSistema='" + isCargadoSistema() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
             "}";

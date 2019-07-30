@@ -63,18 +63,12 @@ export class BrigadaDetail extends React.Component<IBrigadaDetailProps> {
               <TextFormat value={brigadaEntity.fechaf} type="date" format={APP_DATE_FORMAT} />
             </dd>
             <dt>
-              <span id="cargadoSistema">
-                <Translate contentKey="hisBrigadaSaludApp.brigada.cargadoSistema">Cargado Sistema</Translate>
-              </span>
-            </dt>
-            <dd>{brigadaEntity.cargadoSistema ? 'true' : 'false'}</dd>
-            <dt>
               <span id="createdAt">
                 <Translate contentKey="hisBrigadaSaludApp.brigada.createdAt">Created At</Translate>
               </span>
             </dt>
             <dd>
-              <TextFormat value={brigadaEntity.createdAt} type="date" format={APP_LOCAL_DATE_FORMAT} />
+              <TextFormat value={brigadaEntity.createdAt} type="date" format={APP_DATE_FORMAT} />
             </dd>
             <dt>
               <span id="updatedAt">
@@ -82,7 +76,7 @@ export class BrigadaDetail extends React.Component<IBrigadaDetailProps> {
               </span>
             </dt>
             <dd>
-              <TextFormat value={brigadaEntity.updatedAt} type="date" format={APP_LOCAL_DATE_FORMAT} />
+              <TextFormat value={brigadaEntity.updatedAt} type="date" format={APP_DATE_FORMAT} />
             </dd>
           </dl>
           <Button tag={Link} to="/entity/brigada" replace color="info">

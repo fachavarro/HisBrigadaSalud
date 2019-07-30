@@ -18,9 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.Validator;
 
 
-import java.time.LocalDate;
 import java.time.Instant;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -51,14 +49,11 @@ public class BrigadaResourceIT {
     private static final Instant DEFAULT_FECHAF = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_FECHAF = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
-    private static final Boolean DEFAULT_CARGADO_SISTEMA = false;
-    private static final Boolean UPDATED_CARGADO_SISTEMA = true;
+    private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
-    private static final LocalDate DEFAULT_CREATED_AT = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_CREATED_AT = LocalDate.now(ZoneId.systemDefault());
-
-    private static final LocalDate DEFAULT_UPDATED_AT = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_UPDATED_AT = LocalDate.now(ZoneId.systemDefault());
+    private static final Instant DEFAULT_UPDATED_AT = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_UPDATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     @Autowired
     private BrigadaRepository brigadaRepository;
@@ -104,7 +99,6 @@ public class BrigadaResourceIT {
             .ciudad(DEFAULT_CIUDAD)
             .fechai(DEFAULT_FECHAI)
             .fechaf(DEFAULT_FECHAF)
-            .cargadoSistema(DEFAULT_CARGADO_SISTEMA)
             .createdAt(DEFAULT_CREATED_AT)
             .updatedAt(DEFAULT_UPDATED_AT);
         return brigada;
@@ -122,7 +116,6 @@ public class BrigadaResourceIT {
             .ciudad(UPDATED_CIUDAD)
             .fechai(UPDATED_FECHAI)
             .fechaf(UPDATED_FECHAF)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
         return brigada;
@@ -153,7 +146,6 @@ public class BrigadaResourceIT {
         assertThat(testBrigada.getCiudad()).isEqualTo(DEFAULT_CIUDAD);
         assertThat(testBrigada.getFechai()).isEqualTo(DEFAULT_FECHAI);
         assertThat(testBrigada.getFechaf()).isEqualTo(DEFAULT_FECHAF);
-        assertThat(testBrigada.isCargadoSistema()).isEqualTo(DEFAULT_CARGADO_SISTEMA);
         assertThat(testBrigada.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testBrigada.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
     }
@@ -277,7 +269,6 @@ public class BrigadaResourceIT {
             .andExpect(jsonPath("$.[*].ciudad").value(hasItem(DEFAULT_CIUDAD.toString())))
             .andExpect(jsonPath("$.[*].fechai").value(hasItem(DEFAULT_FECHAI.toString())))
             .andExpect(jsonPath("$.[*].fechaf").value(hasItem(DEFAULT_FECHAF.toString())))
-            .andExpect(jsonPath("$.[*].cargadoSistema").value(hasItem(DEFAULT_CARGADO_SISTEMA.booleanValue())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }
@@ -297,7 +288,6 @@ public class BrigadaResourceIT {
             .andExpect(jsonPath("$.ciudad").value(DEFAULT_CIUDAD.toString()))
             .andExpect(jsonPath("$.fechai").value(DEFAULT_FECHAI.toString()))
             .andExpect(jsonPath("$.fechaf").value(DEFAULT_FECHAF.toString()))
-            .andExpect(jsonPath("$.cargadoSistema").value(DEFAULT_CARGADO_SISTEMA.booleanValue()))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
             .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
     }
@@ -324,7 +314,6 @@ public class BrigadaResourceIT {
             .ciudad(UPDATED_CIUDAD)
             .fechai(UPDATED_FECHAI)
             .fechaf(UPDATED_FECHAF)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
 
@@ -342,7 +331,6 @@ public class BrigadaResourceIT {
         assertThat(testBrigada.getCiudad()).isEqualTo(UPDATED_CIUDAD);
         assertThat(testBrigada.getFechai()).isEqualTo(UPDATED_FECHAI);
         assertThat(testBrigada.getFechaf()).isEqualTo(UPDATED_FECHAF);
-        assertThat(testBrigada.isCargadoSistema()).isEqualTo(UPDATED_CARGADO_SISTEMA);
         assertThat(testBrigada.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testBrigada.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
     }

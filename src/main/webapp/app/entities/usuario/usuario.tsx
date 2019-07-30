@@ -64,9 +64,6 @@ export class Usuario extends React.Component<IUsuarioProps> {
                     <Translate contentKey="hisBrigadaSaludApp.usuario.contrasena">Contrasena</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.usuario.cargadoSistema">Cargado Sistema</Translate>
-                  </th>
-                  <th>
                     <Translate contentKey="hisBrigadaSaludApp.usuario.createdAt">Created At</Translate>
                   </th>
                   <th>
@@ -91,7 +88,6 @@ export class Usuario extends React.Component<IUsuarioProps> {
                     <td>{usuario.especialidad}</td>
                     <td>{usuario.nombreUsuario}</td>
                     <td>{usuario.contrasena}</td>
-                    <td>{usuario.cargadoSistema ? 'true' : 'false'}</td>
                     <td>
                       <TextFormat type="date" value={usuario.createdAt} format={APP_DATE_FORMAT} />
                     </td>

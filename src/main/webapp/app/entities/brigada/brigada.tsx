@@ -55,9 +55,6 @@ export class Brigada extends React.Component<IBrigadaProps> {
                     <Translate contentKey="hisBrigadaSaludApp.brigada.fechaf">Fechaf</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.brigada.cargadoSistema">Cargado Sistema</Translate>
-                  </th>
-                  <th>
                     <Translate contentKey="hisBrigadaSaludApp.brigada.createdAt">Created At</Translate>
                   </th>
                   <th>
@@ -83,12 +80,11 @@ export class Brigada extends React.Component<IBrigadaProps> {
                     <td>
                       <TextFormat type="date" value={brigada.fechaf} format={APP_DATE_FORMAT} />
                     </td>
-                    <td>{brigada.cargadoSistema ? 'true' : 'false'}</td>
                     <td>
-                      <TextFormat type="date" value={brigada.createdAt} format={APP_LOCAL_DATE_FORMAT} />
+                      <TextFormat type="date" value={brigada.createdAt} format={APP_DATE_FORMAT} />
                     </td>
                     <td>
-                      <TextFormat type="date" value={brigada.updatedAt} format={APP_LOCAL_DATE_FORMAT} />
+                      <TextFormat type="date" value={brigada.updatedAt} format={APP_DATE_FORMAT} />
                     </td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">

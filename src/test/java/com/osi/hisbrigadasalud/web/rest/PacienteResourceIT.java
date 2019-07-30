@@ -58,8 +58,8 @@ public class PacienteResourceIT {
     private static final String DEFAULT_OCUPACION = "AAAAAAAAAA";
     private static final String UPDATED_OCUPACION = "BBBBBBBBBB";
 
-    private static final String DEFAULT_AFILIADO_SSS = "AAAAAAAAAA";
-    private static final String UPDATED_AFILIADO_SSS = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_AFILIADO_SSS = false;
+    private static final Boolean UPDATED_AFILIADO_SSS = true;
 
     private static final String DEFAULT_CUAL_SSS = "AAAAAAAAAA";
     private static final String UPDATED_CUAL_SSS = "BBBBBBBBBB";
@@ -72,9 +72,6 @@ public class PacienteResourceIT {
 
     private static final String DEFAULT_NUMERO_TELEFONO = "AAAAAAAAAA";
     private static final String UPDATED_NUMERO_TELEFONO = "BBBBBBBBBB";
-
-    private static final Boolean DEFAULT_CARGADO_SISTEMA = false;
-    private static final Boolean UPDATED_CARGADO_SISTEMA = true;
 
     private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -134,7 +131,6 @@ public class PacienteResourceIT {
             .nacionalidad(DEFAULT_NACIONALIDAD)
             .barrioVive(DEFAULT_BARRIO_VIVE)
             .numeroTelefono(DEFAULT_NUMERO_TELEFONO)
-            .cargadoSistema(DEFAULT_CARGADO_SISTEMA)
             .createdAt(DEFAULT_CREATED_AT)
             .updatedAt(DEFAULT_UPDATED_AT);
         return paciente;
@@ -160,7 +156,6 @@ public class PacienteResourceIT {
             .nacionalidad(UPDATED_NACIONALIDAD)
             .barrioVive(UPDATED_BARRIO_VIVE)
             .numeroTelefono(UPDATED_NUMERO_TELEFONO)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
         return paciente;
@@ -194,12 +189,11 @@ public class PacienteResourceIT {
         assertThat(testPaciente.getFechaNacimiento()).isEqualTo(DEFAULT_FECHA_NACIMIENTO);
         assertThat(testPaciente.getAcudiente()).isEqualTo(DEFAULT_ACUDIENTE);
         assertThat(testPaciente.getOcupacion()).isEqualTo(DEFAULT_OCUPACION);
-        assertThat(testPaciente.getAfiliadoSSS()).isEqualTo(DEFAULT_AFILIADO_SSS);
+        assertThat(testPaciente.isAfiliadoSSS()).isEqualTo(DEFAULT_AFILIADO_SSS);
         assertThat(testPaciente.getCualSSS()).isEqualTo(DEFAULT_CUAL_SSS);
         assertThat(testPaciente.getNacionalidad()).isEqualTo(DEFAULT_NACIONALIDAD);
         assertThat(testPaciente.getBarrioVive()).isEqualTo(DEFAULT_BARRIO_VIVE);
         assertThat(testPaciente.getNumeroTelefono()).isEqualTo(DEFAULT_NUMERO_TELEFONO);
-        assertThat(testPaciente.isCargadoSistema()).isEqualTo(DEFAULT_CARGADO_SISTEMA);
         assertThat(testPaciente.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testPaciente.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
     }
@@ -360,12 +354,11 @@ public class PacienteResourceIT {
             .andExpect(jsonPath("$.[*].fechaNacimiento").value(hasItem(DEFAULT_FECHA_NACIMIENTO.toString())))
             .andExpect(jsonPath("$.[*].acudiente").value(hasItem(DEFAULT_ACUDIENTE.toString())))
             .andExpect(jsonPath("$.[*].ocupacion").value(hasItem(DEFAULT_OCUPACION.toString())))
-            .andExpect(jsonPath("$.[*].afiliadoSSS").value(hasItem(DEFAULT_AFILIADO_SSS.toString())))
+            .andExpect(jsonPath("$.[*].afiliadoSSS").value(hasItem(DEFAULT_AFILIADO_SSS.booleanValue())))
             .andExpect(jsonPath("$.[*].cualSSS").value(hasItem(DEFAULT_CUAL_SSS.toString())))
             .andExpect(jsonPath("$.[*].nacionalidad").value(hasItem(DEFAULT_NACIONALIDAD.toString())))
             .andExpect(jsonPath("$.[*].barrioVive").value(hasItem(DEFAULT_BARRIO_VIVE.toString())))
             .andExpect(jsonPath("$.[*].numeroTelefono").value(hasItem(DEFAULT_NUMERO_TELEFONO.toString())))
-            .andExpect(jsonPath("$.[*].cargadoSistema").value(hasItem(DEFAULT_CARGADO_SISTEMA.booleanValue())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }
@@ -388,12 +381,11 @@ public class PacienteResourceIT {
             .andExpect(jsonPath("$.fechaNacimiento").value(DEFAULT_FECHA_NACIMIENTO.toString()))
             .andExpect(jsonPath("$.acudiente").value(DEFAULT_ACUDIENTE.toString()))
             .andExpect(jsonPath("$.ocupacion").value(DEFAULT_OCUPACION.toString()))
-            .andExpect(jsonPath("$.afiliadoSSS").value(DEFAULT_AFILIADO_SSS.toString()))
+            .andExpect(jsonPath("$.afiliadoSSS").value(DEFAULT_AFILIADO_SSS.booleanValue()))
             .andExpect(jsonPath("$.cualSSS").value(DEFAULT_CUAL_SSS.toString()))
             .andExpect(jsonPath("$.nacionalidad").value(DEFAULT_NACIONALIDAD.toString()))
             .andExpect(jsonPath("$.barrioVive").value(DEFAULT_BARRIO_VIVE.toString()))
             .andExpect(jsonPath("$.numeroTelefono").value(DEFAULT_NUMERO_TELEFONO.toString()))
-            .andExpect(jsonPath("$.cargadoSistema").value(DEFAULT_CARGADO_SISTEMA.booleanValue()))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
             .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
     }
@@ -428,7 +420,6 @@ public class PacienteResourceIT {
             .nacionalidad(UPDATED_NACIONALIDAD)
             .barrioVive(UPDATED_BARRIO_VIVE)
             .numeroTelefono(UPDATED_NUMERO_TELEFONO)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
 
@@ -449,12 +440,11 @@ public class PacienteResourceIT {
         assertThat(testPaciente.getFechaNacimiento()).isEqualTo(UPDATED_FECHA_NACIMIENTO);
         assertThat(testPaciente.getAcudiente()).isEqualTo(UPDATED_ACUDIENTE);
         assertThat(testPaciente.getOcupacion()).isEqualTo(UPDATED_OCUPACION);
-        assertThat(testPaciente.getAfiliadoSSS()).isEqualTo(UPDATED_AFILIADO_SSS);
+        assertThat(testPaciente.isAfiliadoSSS()).isEqualTo(UPDATED_AFILIADO_SSS);
         assertThat(testPaciente.getCualSSS()).isEqualTo(UPDATED_CUAL_SSS);
         assertThat(testPaciente.getNacionalidad()).isEqualTo(UPDATED_NACIONALIDAD);
         assertThat(testPaciente.getBarrioVive()).isEqualTo(UPDATED_BARRIO_VIVE);
         assertThat(testPaciente.getNumeroTelefono()).isEqualTo(UPDATED_NUMERO_TELEFONO);
-        assertThat(testPaciente.isCargadoSistema()).isEqualTo(UPDATED_CARGADO_SISTEMA);
         assertThat(testPaciente.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testPaciente.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
     }

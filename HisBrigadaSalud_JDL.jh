@@ -6,9 +6,8 @@ entity Brigada {
     ciudad String required,
     fechai Instant required,
     fechaf Instant required,
-    cargadoSistema Boolean,
-    createdAt LocalDate,
-    updatedAt LocalDate
+    createdAt Instant,
+    updatedAt Instant
 }
 
 entity ServidorAPI {
@@ -16,7 +15,6 @@ entity ServidorAPI {
     server String required,
     port String,
     estado String,
-    cargadoSistema Boolean,
     createdAt Instant,
     updatedAt Instant,
 }
@@ -30,7 +28,6 @@ entity Usuario {
     especialidad String required,
     nombreUsuario String required,
     contrasena String required,
-    cargadoSistema Boolean,
     createdAt Instant,
     updatedAt Instant
 }
@@ -44,12 +41,11 @@ entity Paciente {
     fechaNacimiento String required,
     acudiente String, 
     ocupacion String,
-    afiliadoSSS String,
+    afiliadoSSS Boolean,
     cualSSS String,
 	nacionalidad String required,
     barrioVive String, 
     numeroTelefono String,
-    cargadoSistema Boolean,
     createdAt Instant,
     updatedAt Instant,
 }

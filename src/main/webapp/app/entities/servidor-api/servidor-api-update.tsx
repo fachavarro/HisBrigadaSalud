@@ -131,12 +131,6 @@ export class ServidorAPIUpdate extends React.Component<IServidorAPIUpdateProps, 
                   <AvField id="servidor-api-estado" type="text" name="estado" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="cargadoSistemaLabel" check>
-                    <AvInput id="servidor-api-cargadoSistema" type="checkbox" className="form-control" name="cargadoSistema" />
-                    <Translate contentKey="hisBrigadaSaludApp.servidorAPI.cargadoSistema">Cargado Sistema</Translate>
-                  </Label>
-                </AvGroup>
-                <AvGroup>
                   <Label id="createdAtLabel" for="servidor-api-createdAt">
                     <Translate contentKey="hisBrigadaSaludApp.servidorAPI.createdAt">Created At</Translate>
                   </Label>

@@ -51,7 +51,7 @@ public class Paciente implements Serializable {
     private String ocupacion;
 
     @Field("afiliado_sss")
-    private String afiliadoSSS;
+    private Boolean afiliadoSSS;
 
     @Field("cual_sss")
     private String cualSSS;
@@ -65,9 +65,6 @@ public class Paciente implements Serializable {
 
     @Field("numero_telefono")
     private String numeroTelefono;
-
-    @Field("cargado_sistema")
-    private Boolean cargadoSistema;
 
     @Field("created_at")
     private Instant createdAt;
@@ -193,16 +190,16 @@ public class Paciente implements Serializable {
         this.ocupacion = ocupacion;
     }
 
-    public String getAfiliadoSSS() {
+    public Boolean isAfiliadoSSS() {
         return afiliadoSSS;
     }
 
-    public Paciente afiliadoSSS(String afiliadoSSS) {
+    public Paciente afiliadoSSS(Boolean afiliadoSSS) {
         this.afiliadoSSS = afiliadoSSS;
         return this;
     }
 
-    public void setAfiliadoSSS(String afiliadoSSS) {
+    public void setAfiliadoSSS(Boolean afiliadoSSS) {
         this.afiliadoSSS = afiliadoSSS;
     }
 
@@ -256,19 +253,6 @@ public class Paciente implements Serializable {
 
     public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
-    }
-
-    public Boolean isCargadoSistema() {
-        return cargadoSistema;
-    }
-
-    public Paciente cargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
-        return this;
-    }
-
-    public void setCargadoSistema(Boolean cargadoSistema) {
-        this.cargadoSistema = cargadoSistema;
     }
 
     public Instant getCreatedAt() {
@@ -339,12 +323,11 @@ public class Paciente implements Serializable {
             ", fechaNacimiento='" + getFechaNacimiento() + "'" +
             ", acudiente='" + getAcudiente() + "'" +
             ", ocupacion='" + getOcupacion() + "'" +
-            ", afiliadoSSS='" + getAfiliadoSSS() + "'" +
+            ", afiliadoSSS='" + isAfiliadoSSS() + "'" +
             ", cualSSS='" + getCualSSS() + "'" +
             ", nacionalidad='" + getNacionalidad() + "'" +
             ", barrioVive='" + getBarrioVive() + "'" +
             ", numeroTelefono='" + getNumeroTelefono() + "'" +
-            ", cargadoSistema='" + isCargadoSistema() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
             "}";

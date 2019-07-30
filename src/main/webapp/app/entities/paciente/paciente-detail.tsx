@@ -81,7 +81,7 @@ export class PacienteDetail extends React.Component<IPacienteDetailProps> {
                 <Translate contentKey="hisBrigadaSaludApp.paciente.afiliadoSSS">Afiliado SSS</Translate>
               </span>
             </dt>
-            <dd>{pacienteEntity.afiliadoSSS}</dd>
+            <dd>{pacienteEntity.afiliadoSSS ? 'true' : 'false'}</dd>
             <dt>
               <span id="cualSSS">
                 <Translate contentKey="hisBrigadaSaludApp.paciente.cualSSS">Cual SSS</Translate>
@@ -106,12 +106,6 @@ export class PacienteDetail extends React.Component<IPacienteDetailProps> {
               </span>
             </dt>
             <dd>{pacienteEntity.numeroTelefono}</dd>
-            <dt>
-              <span id="cargadoSistema">
-                <Translate contentKey="hisBrigadaSaludApp.paciente.cargadoSistema">Cargado Sistema</Translate>
-              </span>
-            </dt>
-            <dd>{pacienteEntity.cargadoSistema ? 'true' : 'false'}</dd>
             <dt>
               <span id="createdAt">
                 <Translate contentKey="hisBrigadaSaludApp.paciente.createdAt">Created At</Translate>

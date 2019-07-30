@@ -52,9 +52,6 @@ export class ServidorAPI extends React.Component<IServidorAPIProps> {
                     <Translate contentKey="hisBrigadaSaludApp.servidorAPI.estado">Estado</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.servidorAPI.cargadoSistema">Cargado Sistema</Translate>
-                  </th>
-                  <th>
                     <Translate contentKey="hisBrigadaSaludApp.servidorAPI.createdAt">Created At</Translate>
                   </th>
                   <th>
@@ -75,7 +72,6 @@ export class ServidorAPI extends React.Component<IServidorAPIProps> {
                     <td>{servidorAPI.server}</td>
                     <td>{servidorAPI.port}</td>
                     <td>{servidorAPI.estado}</td>
-                    <td>{servidorAPI.cargadoSistema ? 'true' : 'false'}</td>
                     <td>
                       <TextFormat type="date" value={servidorAPI.createdAt} format={APP_DATE_FORMAT} />
                     </td>

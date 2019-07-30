@@ -37,16 +37,12 @@
             ]
         },
         {
-            "fieldName": "cargadoSistema",
-            "fieldType": "Boolean"
-        },
-        {
             "fieldName": "createdAt",
-            "fieldType": "LocalDate"
+            "fieldType": "Instant"
         },
         {
             "fieldName": "updatedAt",
-            "fieldType": "LocalDate"
+            "fieldType": "Instant"
         }
     ],
     "relationships": [
@@ -58,7 +54,7 @@
             "ownerSide": false
         }
     ],
-    "changelogDate": "20190726194412",
+    "changelogDate": "20190729190028",
     "entityTableName": "brigada",
     "dto": "no",
     "pagination": "no",

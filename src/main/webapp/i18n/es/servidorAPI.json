@@ -20,7 +20,6 @@
       "server": "Server",
       "port": "Port",
       "estado": "Estado",
-      "cargadoSistema": "Cargado Sistema",
       "createdAt": "Created At",
       "updatedAt": "Updated At"
     }

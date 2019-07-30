@@ -122,6 +122,7 @@ public class PacienteResource {
         for (Paciente dto:listPacientes) {
         	if (dto.getTipoDoc().equalsIgnoreCase(tipoDoc) && dto.getNumeroDocumento().equals(numeroDocumento)) {
         		paciente =  pacienteRepository.findById(dto.getId());
+        		break;
         	}
         }
         

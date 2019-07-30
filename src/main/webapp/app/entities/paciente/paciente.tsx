@@ -79,9 +79,6 @@ export class Paciente extends React.Component<IPacienteProps> {
                     <Translate contentKey="hisBrigadaSaludApp.paciente.numeroTelefono">Numero Telefono</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.paciente.cargadoSistema">Cargado Sistema</Translate>
-                  </th>
-                  <th>
                     <Translate contentKey="hisBrigadaSaludApp.paciente.createdAt">Created At</Translate>
                   </th>
                   <th>
@@ -106,12 +103,11 @@ export class Paciente extends React.Component<IPacienteProps> {
                     <td>{paciente.fechaNacimiento}</td>
                     <td>{paciente.acudiente}</td>
                     <td>{paciente.ocupacion}</td>
-                    <td>{paciente.afiliadoSSS}</td>
+                    <td>{paciente.afiliadoSSS ? 'true' : 'false'}</td>
                     <td>{paciente.cualSSS}</td>
                     <td>{paciente.nacionalidad}</td>
                     <td>{paciente.barrioVive}</td>
                     <td>{paciente.numeroTelefono}</td>
-                    <td>{paciente.cargadoSistema ? 'true' : 'false'}</td>
                     <td>
                       <TextFormat type="date" value={paciente.createdAt} format={APP_DATE_FORMAT} />
                     </td>

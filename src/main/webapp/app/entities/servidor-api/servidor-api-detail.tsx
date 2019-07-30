@@ -53,12 +53,6 @@ export class ServidorAPIDetail extends React.Component<IServidorAPIDetailProps> 
             </dt>
             <dd>{servidorAPIEntity.estado}</dd>
             <dt>
-              <span id="cargadoSistema">
-                <Translate contentKey="hisBrigadaSaludApp.servidorAPI.cargadoSistema">Cargado Sistema</Translate>
-              </span>
-            </dt>
-            <dd>{servidorAPIEntity.cargadoSistema ? 'true' : 'false'}</dd>
-            <dt>
               <span id="createdAt">
                 <Translate contentKey="hisBrigadaSaludApp.servidorAPI.createdAt">Created At</Translate>
               </span>

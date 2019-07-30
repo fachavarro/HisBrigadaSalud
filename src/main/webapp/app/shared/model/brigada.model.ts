@@ -8,12 +8,9 @@ export interface IBrigada {
   ciudad?: string;
   fechai?: Moment;
   fechaf?: Moment;
-  cargadoSistema?: boolean;
   createdAt?: Moment;
   updatedAt?: Moment;
   atencion?: IAtencion;
 }
 
-export const defaultValue: Readonly<IBrigada> = {
-  cargadoSistema: false
-};
+export const defaultValue: Readonly<IBrigada> = {};

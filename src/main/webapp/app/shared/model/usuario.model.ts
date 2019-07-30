@@ -11,12 +11,9 @@ export interface IUsuario {
   especialidad?: string;
   nombreUsuario?: string;
   contrasena?: string;
-  cargadoSistema?: boolean;
   createdAt?: Moment;
   updatedAt?: Moment;
   atencion?: IAtencion;
 }
 
-export const defaultValue: Readonly<IUsuario> = {
-  cargadoSistema: false
-};
+export const defaultValue: Readonly<IUsuario> = {};

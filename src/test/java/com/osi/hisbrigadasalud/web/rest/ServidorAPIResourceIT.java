@@ -46,9 +46,6 @@ public class ServidorAPIResourceIT {
     private static final String DEFAULT_ESTADO = "AAAAAAAAAA";
     private static final String UPDATED_ESTADO = "BBBBBBBBBB";
 
-    private static final Boolean DEFAULT_CARGADO_SISTEMA = false;
-    private static final Boolean UPDATED_CARGADO_SISTEMA = true;
-
     private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -98,7 +95,6 @@ public class ServidorAPIResourceIT {
             .server(DEFAULT_SERVER)
             .port(DEFAULT_PORT)
             .estado(DEFAULT_ESTADO)
-            .cargadoSistema(DEFAULT_CARGADO_SISTEMA)
             .createdAt(DEFAULT_CREATED_AT)
             .updatedAt(DEFAULT_UPDATED_AT);
         return servidorAPI;
@@ -115,7 +111,6 @@ public class ServidorAPIResourceIT {
             .server(UPDATED_SERVER)
             .port(UPDATED_PORT)
             .estado(UPDATED_ESTADO)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
         return servidorAPI;
@@ -145,7 +140,6 @@ public class ServidorAPIResourceIT {
         assertThat(testServidorAPI.getServer()).isEqualTo(DEFAULT_SERVER);
         assertThat(testServidorAPI.getPort()).isEqualTo(DEFAULT_PORT);
         assertThat(testServidorAPI.getEstado()).isEqualTo(DEFAULT_ESTADO);
-        assertThat(testServidorAPI.isCargadoSistema()).isEqualTo(DEFAULT_CARGADO_SISTEMA);
         assertThat(testServidorAPI.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testServidorAPI.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
     }
@@ -217,7 +211,6 @@ public class ServidorAPIResourceIT {
             .andExpect(jsonPath("$.[*].server").value(hasItem(DEFAULT_SERVER.toString())))
             .andExpect(jsonPath("$.[*].port").value(hasItem(DEFAULT_PORT.toString())))
             .andExpect(jsonPath("$.[*].estado").value(hasItem(DEFAULT_ESTADO.toString())))
-            .andExpect(jsonPath("$.[*].cargadoSistema").value(hasItem(DEFAULT_CARGADO_SISTEMA.booleanValue())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }
@@ -236,7 +229,6 @@ public class ServidorAPIResourceIT {
             .andExpect(jsonPath("$.server").value(DEFAULT_SERVER.toString()))
             .andExpect(jsonPath("$.port").value(DEFAULT_PORT.toString()))
             .andExpect(jsonPath("$.estado").value(DEFAULT_ESTADO.toString()))
-            .andExpect(jsonPath("$.cargadoSistema").value(DEFAULT_CARGADO_SISTEMA.booleanValue()))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
             .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
     }
@@ -262,7 +254,6 @@ public class ServidorAPIResourceIT {
             .server(UPDATED_SERVER)
             .port(UPDATED_PORT)
             .estado(UPDATED_ESTADO)
-            .cargadoSistema(UPDATED_CARGADO_SISTEMA)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
 
@@ -279,7 +270,6 @@ public class ServidorAPIResourceIT {
         assertThat(testServidorAPI.getServer()).isEqualTo(UPDATED_SERVER);
         assertThat(testServidorAPI.getPort()).isEqualTo(UPDATED_PORT);
         assertThat(testServidorAPI.getEstado()).isEqualTo(UPDATED_ESTADO);
-        assertThat(testServidorAPI.isCargadoSistema()).isEqualTo(UPDATED_CARGADO_SISTEMA);
         assertThat(testServidorAPI.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testServidorAPI.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
     }
