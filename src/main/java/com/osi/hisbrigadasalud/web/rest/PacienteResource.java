@@ -157,7 +157,7 @@ public class PacienteResource {
             
             StringBuilder regexp = new StringBuilder();
             for (String word : words) {
-                regexp.append("(?=.*").append(word).append(")");
+                regexp.append("(?=.*").append(word.toLowerCase()).append(")");
             }
          
             Pattern pattern = Pattern.compile(regexp.toString());
