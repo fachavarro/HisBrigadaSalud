@@ -227,9 +227,9 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                   </Label>
                 </AvGroup>
                 <AvGroup>
-                  <Label id="vIHSidaLabel" check>
-                    <AvInput id="atencion-vIHSida" type="checkbox" className="form-control" name="vIHSida" />
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.vIHSida">V IH Sida</Translate>
+                  <Label id="vihSidaLabel" check>
+                    <AvInput id="atencion-vihSida" type="checkbox" className="form-control" name="vihSida" />
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.vihSida">Vih Sida</Translate>
                   </Label>
                 </AvGroup>
                 <AvGroup>
@@ -304,10 +304,10 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                   />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="fURLabel" for="atencion-fUR">
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.fUR">F UR</Translate>
+                  <Label id="furLabel" for="atencion-fur">
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.fur">Fur</Translate>
                   </Label>
-                  <AvField id="atencion-fUR" type="date" className="form-control" name="fUR" />
+                  <AvField id="atencion-fur" type="date" className="form-control" name="fur" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="formulaObstreticaLabel" check>
@@ -439,22 +439,22 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                   <AvField id="atencion-talla" type="text" name="talla" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="iMCLabel" for="atencion-iMC">
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.iMC">I MC</Translate>
+                  <Label id="imcLabel" for="atencion-imc">
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.imc">Imc</Translate>
                   </Label>
-                  <AvField id="atencion-iMC" type="text" name="iMC" />
+                  <AvField id="atencion-imc" type="text" name="imc" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="fCLabel" for="atencion-fC">
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.fC">F C</Translate>
+                  <Label id="fcLabel" for="atencion-fc">
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.fc">Fc</Translate>
                   </Label>
-                  <AvField id="atencion-fC" type="string" className="form-control" name="fC" />
+                  <AvField id="atencion-fc" type="string" className="form-control" name="fc" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="fRLabel" for="atencion-fR">
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.fR">F R</Translate>
+                  <Label id="frLabel" for="atencion-fr">
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.fr">Fr</Translate>
                   </Label>
-                  <AvField id="atencion-fR" type="string" className="form-control" name="fR" />
+                  <AvField id="atencion-fr" type="string" className="form-control" name="fr" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="temperaturaLabel" for="atencion-temperatura">
@@ -597,7 +597,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {brigadas
                       ? brigadas.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.descripcion}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}
@@ -612,7 +612,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {pacientes
                       ? pacientes.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                           {otherEntity.nombre} {otherEntity.apellido}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}
@@ -627,7 +627,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {usuarios
                       ? usuarios.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.nombre} {otherEntity.apellido}
+                            {otherEntity.id}
                           </option>
                         ))
                       : null}

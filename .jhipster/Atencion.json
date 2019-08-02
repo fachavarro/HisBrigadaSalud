@@ -60,7 +60,7 @@
             "fieldType": "Boolean"
         },
         {
-            "fieldName": "vIHSida",
+            "fieldName": "vihSida",
             "fieldType": "Boolean"
         },
         {
@@ -96,7 +96,7 @@
             "fieldValidateRulesMaxlength": 500
         },
         {
-            "fieldName": "fUR",
+            "fieldName": "fur",
             "fieldType": "LocalDate"
         },
         {
@@ -184,15 +184,15 @@
             "fieldType": "BigDecimal"
         },
         {
-            "fieldName": "iMC",
+            "fieldName": "imc",
             "fieldType": "BigDecimal"
         },
         {
-            "fieldName": "fC",
+            "fieldName": "fc",
             "fieldType": "Integer"
         },
         {
-            "fieldName": "fR",
+            "fieldName": "fr",
             "fieldType": "Integer"
         },
         {
@@ -314,7 +314,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20190801223521",
+    "changelogDate": "20190802140724",
     "entityTableName": "atencion",
     "dto": "no",
     "pagination": "no",

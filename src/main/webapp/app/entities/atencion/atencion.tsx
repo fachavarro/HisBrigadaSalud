@@ -72,7 +72,7 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <Translate contentKey="hisBrigadaSaludApp.atencion.insuficienciaRenal">Insuficiencia Renal</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.vIHSida">V IH Sida</Translate>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.vihSida">Vih Sida</Translate>
                   </th>
                   <th>
                     <Translate contentKey="hisBrigadaSaludApp.atencion.otroAntecedentePatologico">Otro Antecedente Patologico</Translate>
@@ -99,7 +99,7 @@ export class Atencion extends React.Component<IAtencionProps> {
                     </Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.fUR">F UR</Translate>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.fur">Fur</Translate>
                   </th>
                   <th>
                     <Translate contentKey="hisBrigadaSaludApp.atencion.formulaObstretica">Formula Obstretica</Translate>
@@ -156,13 +156,13 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <Translate contentKey="hisBrigadaSaludApp.atencion.talla">Talla</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.iMC">I MC</Translate>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.imc">Imc</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.fC">F C</Translate>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.fc">Fc</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.fR">F R</Translate>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.fr">Fr</Translate>
                   </th>
                   <th>
                     <Translate contentKey="hisBrigadaSaludApp.atencion.temperatura">Temperatura</Translate>
@@ -247,7 +247,7 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>{atencion.cancerAntecedentePatologico ? 'true' : 'false'}</td>
                     <td>{atencion.tuberculosis ? 'true' : 'false'}</td>
                     <td>{atencion.insuficienciaRenal ? 'true' : 'false'}</td>
-                    <td>{atencion.vIHSida ? 'true' : 'false'}</td>
+                    <td>{atencion.vihSida ? 'true' : 'false'}</td>
                     <td>{atencion.otroAntecedentePatologico ? 'true' : 'false'}</td>
                     <td>{atencion.descripcionOtroAntecedentePatologico}</td>
                     <td>{atencion.cancerAntecedenteQuirurgico ? 'true' : 'false'}</td>
@@ -255,7 +255,7 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>{atencion.otroAntecedenteQuirurgico ? 'true' : 'false'}</td>
                     <td>{atencion.descripcionOtroAntecedenteQuirurgico}</td>
                     <td>
-                      <TextFormat type="date" value={atencion.fUR} format={APP_LOCAL_DATE_FORMAT} />
+                      <TextFormat type="date" value={atencion.fur} format={APP_LOCAL_DATE_FORMAT} />
                     </td>
                     <td>{atencion.formulaObstretica ? 'true' : 'false'}</td>
                     <td>{atencion.g}</td>
@@ -277,9 +277,9 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>{atencion.revisionPorSistemas}</td>
                     <td>{atencion.peso}</td>
                     <td>{atencion.talla}</td>
-                    <td>{atencion.iMC}</td>
-                    <td>{atencion.fC}</td>
-                    <td>{atencion.fR}</td>
+                    <td>{atencion.imc}</td>
+                    <td>{atencion.fc}</td>
+                    <td>{atencion.fr}</td>
                     <td>{atencion.temperatura}</td>
                     <td>{atencion.saturacion}</td>
                     <td>{atencion.hemoglobina}</td>
@@ -299,9 +299,9 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>
                       <TextFormat type="date" value={atencion.updatedAt} format={APP_DATE_FORMAT} />
                     </td>
-                    <td>{atencion.brigada ? <Link to={`brigada/${atencion.brigada.id}`}>{atencion.brigada.descripcion}</Link> : ''}</td>
-                    <td>{atencion.paciente ? <Link to={`paciente/${atencion.paciente.id}`}>{atencion.paciente.nombre} {atencion.paciente.apellido}</Link> : ''}</td>
-                    <td>{atencion.usuario ? <Link to={`usuario/${atencion.usuario.id}`}>{atencion.usuario.nombre} {atencion.usuario.apellido}</Link> : ''}</td>
+                    <td>{atencion.brigada ? <Link to={`brigada/${atencion.brigada.id}`}>{atencion.brigada.id}</Link> : ''}</td>
+                    <td>{atencion.paciente ? <Link to={`paciente/${atencion.paciente.id}`}>{atencion.paciente.id}</Link> : ''}</td>
+                    <td>{atencion.usuario ? <Link to={`usuario/${atencion.usuario.id}`}>{atencion.usuario.id}</Link> : ''}</td>
                     <td>
                       {atencion.medicamentos
                         ? atencion.medicamentos.map((val, j) => (

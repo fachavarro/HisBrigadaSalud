@@ -21,21 +21,6 @@ export const EntitiesMenu = props => (
     <MenuItem icon="asterisk" to="/entity/paciente">
       <Translate contentKey="global.menu.entities.paciente" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/atencion">
-      <Translate contentKey="global.menu.entities.atencion" />
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/brigada">
-      <Translate contentKey="global.menu.entities.brigada" />
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/servidor-api">
-      <Translate contentKey="global.menu.entities.servidorApi" />
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/usuario">
-      <Translate contentKey="global.menu.entities.usuario" />
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/paciente">
-      <Translate contentKey="global.menu.entities.paciente" />
-    </MenuItem>
     <MenuItem icon="asterisk" to="/entity/medicamento">
       <Translate contentKey="global.menu.entities.medicamento" />
     </MenuItem>

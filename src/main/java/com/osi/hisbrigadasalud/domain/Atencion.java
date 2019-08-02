@@ -58,8 +58,8 @@ public class Atencion implements Serializable {
     @Field("insuficiencia_renal")
     private Boolean insuficienciaRenal;
 
-    @Field("v_ih_sida")
-    private Boolean vIHSida;
+    @Field("vih_sida")
+    private Boolean vihSida;
 
     @Field("otro_antecedente_patologico")
     private Boolean otroAntecedentePatologico;
@@ -81,8 +81,8 @@ public class Atencion implements Serializable {
     @Field("descripcion_otro_antecedente_quirurgico")
     private String descripcionOtroAntecedenteQuirurgico;
 
-    @Field("f_ur")
-    private LocalDate fUR;
+    @Field("fur")
+    private LocalDate fur;
 
     @Field("formula_obstretica")
     private Boolean formulaObstretica;
@@ -141,14 +141,14 @@ public class Atencion implements Serializable {
     @Field("talla")
     private BigDecimal talla;
 
-    @Field("i_mc")
-    private BigDecimal iMC;
+    @Field("imc")
+    private BigDecimal imc;
 
-    @Field("f_c")
-    private Integer fC;
+    @Field("fc")
+    private Integer fc;
 
-    @Field("f_r")
-    private Integer fR;
+    @Field("fr")
+    private Integer fr;
 
     @Field("temperatura")
     private BigDecimal temperatura;
@@ -358,17 +358,17 @@ public class Atencion implements Serializable {
         this.insuficienciaRenal = insuficienciaRenal;
     }
 
-    public Boolean isvIHSida() {
-        return vIHSida;
+    public Boolean isVihSida() {
+        return vihSida;
     }
 
-    public Atencion vIHSida(Boolean vIHSida) {
-        this.vIHSida = vIHSida;
+    public Atencion vihSida(Boolean vihSida) {
+        this.vihSida = vihSida;
         return this;
     }
 
-    public void setvIHSida(Boolean vIHSida) {
-        this.vIHSida = vIHSida;
+    public void setVihSida(Boolean vihSida) {
+        this.vihSida = vihSida;
     }
 
     public Boolean isOtroAntecedentePatologico() {
@@ -449,17 +449,17 @@ public class Atencion implements Serializable {
         this.descripcionOtroAntecedenteQuirurgico = descripcionOtroAntecedenteQuirurgico;
     }
 
-    public LocalDate getfUR() {
-        return fUR;
+    public LocalDate getFur() {
+        return fur;
     }
 
-    public Atencion fUR(LocalDate fUR) {
-        this.fUR = fUR;
+    public Atencion fur(LocalDate fur) {
+        this.fur = fur;
         return this;
     }
 
-    public void setfUR(LocalDate fUR) {
-        this.fUR = fUR;
+    public void setFur(LocalDate fur) {
+        this.fur = fur;
     }
 
     public Boolean isFormulaObstretica() {
@@ -696,43 +696,43 @@ public class Atencion implements Serializable {
         this.talla = talla;
     }
 
-    public BigDecimal getiMC() {
-        return iMC;
+    public BigDecimal getImc() {
+        return imc;
     }
 
-    public Atencion iMC(BigDecimal iMC) {
-        this.iMC = iMC;
+    public Atencion imc(BigDecimal imc) {
+        this.imc = imc;
         return this;
     }
 
-    public void setiMC(BigDecimal iMC) {
-        this.iMC = iMC;
+    public void setImc(BigDecimal imc) {
+        this.imc = imc;
     }
 
-    public Integer getfC() {
-        return fC;
+    public Integer getFc() {
+        return fc;
     }
 
-    public Atencion fC(Integer fC) {
-        this.fC = fC;
+    public Atencion fc(Integer fc) {
+        this.fc = fc;
         return this;
     }
 
-    public void setfC(Integer fC) {
-        this.fC = fC;
+    public void setFc(Integer fc) {
+        this.fc = fc;
     }
 
-    public Integer getfR() {
-        return fR;
+    public Integer getFr() {
+        return fr;
     }
 
-    public Atencion fR(Integer fR) {
-        this.fR = fR;
+    public Atencion fr(Integer fr) {
+        this.fr = fr;
         return this;
     }
 
-    public void setfR(Integer fR) {
-        this.fR = fR;
+    public void setFr(Integer fr) {
+        this.fr = fr;
     }
 
     public BigDecimal getTemperatura() {
@@ -1050,14 +1050,14 @@ public class Atencion implements Serializable {
             ", cancerAntecedentePatologico='" + isCancerAntecedentePatologico() + "'" +
             ", tuberculosis='" + isTuberculosis() + "'" +
             ", insuficienciaRenal='" + isInsuficienciaRenal() + "'" +
-            ", vIHSida='" + isvIHSida() + "'" +
+            ", vihSida='" + isVihSida() + "'" +
             ", otroAntecedentePatologico='" + isOtroAntecedentePatologico() + "'" +
             ", descripcionOtroAntecedentePatologico='" + getDescripcionOtroAntecedentePatologico() + "'" +
             ", cancerAntecedenteQuirurgico='" + isCancerAntecedenteQuirurgico() + "'" +
             ", pomeroy='" + isPomeroy() + "'" +
             ", otroAntecedenteQuirurgico='" + isOtroAntecedenteQuirurgico() + "'" +
             ", descripcionOtroAntecedenteQuirurgico='" + getDescripcionOtroAntecedenteQuirurgico() + "'" +
-            ", fUR='" + getfUR() + "'" +
+            ", fur='" + getFur() + "'" +
             ", formulaObstretica='" + isFormulaObstretica() + "'" +
             ", g=" + getG() +
             ", p=" + getP() +
@@ -1076,9 +1076,9 @@ public class Atencion implements Serializable {
             ", revisionPorSistemas='" + getRevisionPorSistemas() + "'" +
             ", peso=" + getPeso() +
             ", talla=" + getTalla() +
-            ", iMC=" + getiMC() +
-            ", fC=" + getfC() +
-            ", fR=" + getfR() +
+            ", imc=" + getImc() +
+            ", fc=" + getFc() +
+            ", fr=" + getFr() +
             ", temperatura=" + getTemperatura() +
             ", saturacion=" + getSaturacion() +
             ", hemoglobina=" + getHemoglobina() +

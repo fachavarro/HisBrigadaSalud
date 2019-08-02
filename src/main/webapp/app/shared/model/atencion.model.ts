@@ -17,14 +17,14 @@ export interface IAtencion {
   cancerAntecedentePatologico?: boolean;
   tuberculosis?: boolean;
   insuficienciaRenal?: boolean;
-  vIHSida?: boolean;
+  vihSida?: boolean;
   otroAntecedentePatologico?: boolean;
   descripcionOtroAntecedentePatologico?: string;
   cancerAntecedenteQuirurgico?: boolean;
   pomeroy?: boolean;
   otroAntecedenteQuirurgico?: boolean;
   descripcionOtroAntecedenteQuirurgico?: string;
-  fUR?: Moment;
+  fur?: Moment;
   formulaObstretica?: boolean;
   g?: number;
   p?: number;
@@ -43,9 +43,9 @@ export interface IAtencion {
   revisionPorSistemas?: string;
   peso?: number;
   talla?: number;
-  iMC?: number;
-  fC?: number;
-  fR?: number;
+  imc?: number;
+  fc?: number;
+  fr?: number;
   temperatura?: number;
   saturacion?: number;
   hemoglobina?: number;
@@ -74,7 +74,7 @@ export const defaultValue: Readonly<IAtencion> = {
   cancerAntecedentePatologico: false,
   tuberculosis: false,
   insuficienciaRenal: false,
-  vIHSida: false,
+  vihSida: false,
   otroAntecedentePatologico: false,
   cancerAntecedenteQuirurgico: false,
   pomeroy: false,

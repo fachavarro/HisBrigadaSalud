@@ -91,11 +91,11 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             </dt>
             <dd>{atencionEntity.insuficienciaRenal ? 'true' : 'false'}</dd>
             <dt>
-              <span id="vIHSida">
-                <Translate contentKey="hisBrigadaSaludApp.atencion.vIHSida">V IH Sida</Translate>
+              <span id="vihSida">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.vihSida">Vih Sida</Translate>
               </span>
             </dt>
-            <dd>{atencionEntity.vIHSida ? 'true' : 'false'}</dd>
+            <dd>{atencionEntity.vihSida ? 'true' : 'false'}</dd>
             <dt>
               <span id="otroAntecedentePatologico">
                 <Translate contentKey="hisBrigadaSaludApp.atencion.otroAntecedentePatologico">Otro Antecedente Patologico</Translate>
@@ -137,12 +137,12 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             </dt>
             <dd>{atencionEntity.descripcionOtroAntecedenteQuirurgico}</dd>
             <dt>
-              <span id="fUR">
-                <Translate contentKey="hisBrigadaSaludApp.atencion.fUR">F UR</Translate>
+              <span id="fur">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.fur">Fur</Translate>
               </span>
             </dt>
             <dd>
-              <TextFormat value={atencionEntity.fUR} type="date" format={APP_LOCAL_DATE_FORMAT} />
+              <TextFormat value={atencionEntity.fur} type="date" format={APP_LOCAL_DATE_FORMAT} />
             </dd>
             <dt>
               <span id="formulaObstretica">
@@ -255,23 +255,23 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             </dt>
             <dd>{atencionEntity.talla}</dd>
             <dt>
-              <span id="iMC">
-                <Translate contentKey="hisBrigadaSaludApp.atencion.iMC">I MC</Translate>
+              <span id="imc">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.imc">Imc</Translate>
               </span>
             </dt>
-            <dd>{atencionEntity.iMC}</dd>
+            <dd>{atencionEntity.imc}</dd>
             <dt>
-              <span id="fC">
-                <Translate contentKey="hisBrigadaSaludApp.atencion.fC">F C</Translate>
+              <span id="fc">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.fc">Fc</Translate>
               </span>
             </dt>
-            <dd>{atencionEntity.fC}</dd>
+            <dd>{atencionEntity.fc}</dd>
             <dt>
-              <span id="fR">
-                <Translate contentKey="hisBrigadaSaludApp.atencion.fR">F R</Translate>
+              <span id="fr">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.fr">Fr</Translate>
               </span>
             </dt>
-            <dd>{atencionEntity.fR}</dd>
+            <dd>{atencionEntity.fr}</dd>
             <dt>
               <span id="temperatura">
                 <Translate contentKey="hisBrigadaSaludApp.atencion.temperatura">Temperatura</Translate>
@@ -369,15 +369,15 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.brigada">Brigada</Translate>
             </dt>
-            <dd>{atencionEntity.brigada ? atencionEntity.brigada.descripcion : ''}</dd>
+            <dd>{atencionEntity.brigada ? atencionEntity.brigada.id : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.paciente">Paciente</Translate>
             </dt>
-            <dd>{atencionEntity.paciente ? atencionEntity.paciente.nombre : ''}</dd>
+            <dd>{atencionEntity.paciente ? atencionEntity.paciente.id : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.usuario">Usuario</Translate>
             </dt>
-            <dd>{atencionEntity.usuario ? atencionEntity.usuario.nombre : ''}</dd>
+            <dd>{atencionEntity.usuario ? atencionEntity.usuario.id : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
             </dt>

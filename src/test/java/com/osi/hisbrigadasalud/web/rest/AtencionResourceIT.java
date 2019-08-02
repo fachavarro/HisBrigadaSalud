@@ -72,8 +72,8 @@ public class AtencionResourceIT {
     private static final Boolean DEFAULT_INSUFICIENCIA_RENAL = false;
     private static final Boolean UPDATED_INSUFICIENCIA_RENAL = true;
 
-    private static final Boolean DEFAULT_V_IH_SIDA = false;
-    private static final Boolean UPDATED_V_IH_SIDA = true;
+    private static final Boolean DEFAULT_VIH_SIDA = false;
+    private static final Boolean UPDATED_VIH_SIDA = true;
 
     private static final Boolean DEFAULT_OTRO_ANTECEDENTE_PATOLOGICO = false;
     private static final Boolean UPDATED_OTRO_ANTECEDENTE_PATOLOGICO = true;
@@ -93,8 +93,8 @@ public class AtencionResourceIT {
     private static final String DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_F_UR = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_F_UR = LocalDate.now(ZoneId.systemDefault());
+    private static final LocalDate DEFAULT_FUR = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_FUR = LocalDate.now(ZoneId.systemDefault());
 
     private static final Boolean DEFAULT_FORMULA_OBSTRETICA = false;
     private static final Boolean UPDATED_FORMULA_OBSTRETICA = true;
@@ -150,14 +150,14 @@ public class AtencionResourceIT {
     private static final BigDecimal DEFAULT_TALLA = new BigDecimal(1);
     private static final BigDecimal UPDATED_TALLA = new BigDecimal(2);
 
-    private static final BigDecimal DEFAULT_I_MC = new BigDecimal(1);
-    private static final BigDecimal UPDATED_I_MC = new BigDecimal(2);
+    private static final BigDecimal DEFAULT_IMC = new BigDecimal(1);
+    private static final BigDecimal UPDATED_IMC = new BigDecimal(2);
 
-    private static final Integer DEFAULT_F_C = 1;
-    private static final Integer UPDATED_F_C = 2;
+    private static final Integer DEFAULT_FC = 1;
+    private static final Integer UPDATED_FC = 2;
 
-    private static final Integer DEFAULT_F_R = 1;
-    private static final Integer UPDATED_F_R = 2;
+    private static final Integer DEFAULT_FR = 1;
+    private static final Integer UPDATED_FR = 2;
 
     private static final BigDecimal DEFAULT_TEMPERATURA = new BigDecimal(1);
     private static final BigDecimal UPDATED_TEMPERATURA = new BigDecimal(2);
@@ -256,14 +256,14 @@ public class AtencionResourceIT {
             .cancerAntecedentePatologico(DEFAULT_CANCER_ANTECEDENTE_PATOLOGICO)
             .tuberculosis(DEFAULT_TUBERCULOSIS)
             .insuficienciaRenal(DEFAULT_INSUFICIENCIA_RENAL)
-            .vIHSida(DEFAULT_V_IH_SIDA)
+            .vihSida(DEFAULT_VIH_SIDA)
             .otroAntecedentePatologico(DEFAULT_OTRO_ANTECEDENTE_PATOLOGICO)
             .descripcionOtroAntecedentePatologico(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO)
             .cancerAntecedenteQuirurgico(DEFAULT_CANCER_ANTECEDENTE_QUIRURGICO)
             .pomeroy(DEFAULT_POMEROY)
             .otroAntecedenteQuirurgico(DEFAULT_OTRO_ANTECEDENTE_QUIRURGICO)
             .descripcionOtroAntecedenteQuirurgico(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO)
-            .fUR(DEFAULT_F_UR)
+            .fur(DEFAULT_FUR)
             .formulaObstretica(DEFAULT_FORMULA_OBSTRETICA)
             .g(DEFAULT_G)
             .p(DEFAULT_P)
@@ -282,9 +282,9 @@ public class AtencionResourceIT {
             .revisionPorSistemas(DEFAULT_REVISION_POR_SISTEMAS)
             .peso(DEFAULT_PESO)
             .talla(DEFAULT_TALLA)
-            .iMC(DEFAULT_I_MC)
-            .fC(DEFAULT_F_C)
-            .fR(DEFAULT_F_R)
+            .imc(DEFAULT_IMC)
+            .fc(DEFAULT_FC)
+            .fr(DEFAULT_FR)
             .temperatura(DEFAULT_TEMPERATURA)
             .saturacion(DEFAULT_SATURACION)
             .hemoglobina(DEFAULT_HEMOGLOBINA)
@@ -320,14 +320,14 @@ public class AtencionResourceIT {
             .cancerAntecedentePatologico(UPDATED_CANCER_ANTECEDENTE_PATOLOGICO)
             .tuberculosis(UPDATED_TUBERCULOSIS)
             .insuficienciaRenal(UPDATED_INSUFICIENCIA_RENAL)
-            .vIHSida(UPDATED_V_IH_SIDA)
+            .vihSida(UPDATED_VIH_SIDA)
             .otroAntecedentePatologico(UPDATED_OTRO_ANTECEDENTE_PATOLOGICO)
             .descripcionOtroAntecedentePatologico(UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO)
             .cancerAntecedenteQuirurgico(UPDATED_CANCER_ANTECEDENTE_QUIRURGICO)
             .pomeroy(UPDATED_POMEROY)
             .otroAntecedenteQuirurgico(UPDATED_OTRO_ANTECEDENTE_QUIRURGICO)
             .descripcionOtroAntecedenteQuirurgico(UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO)
-            .fUR(UPDATED_F_UR)
+            .fur(UPDATED_FUR)
             .formulaObstretica(UPDATED_FORMULA_OBSTRETICA)
             .g(UPDATED_G)
             .p(UPDATED_P)
@@ -346,9 +346,9 @@ public class AtencionResourceIT {
             .revisionPorSistemas(UPDATED_REVISION_POR_SISTEMAS)
             .peso(UPDATED_PESO)
             .talla(UPDATED_TALLA)
-            .iMC(UPDATED_I_MC)
-            .fC(UPDATED_F_C)
-            .fR(UPDATED_F_R)
+            .imc(UPDATED_IMC)
+            .fc(UPDATED_FC)
+            .fr(UPDATED_FR)
             .temperatura(UPDATED_TEMPERATURA)
             .saturacion(UPDATED_SATURACION)
             .hemoglobina(UPDATED_HEMOGLOBINA)
@@ -397,14 +397,14 @@ public class AtencionResourceIT {
         assertThat(testAtencion.isCancerAntecedentePatologico()).isEqualTo(DEFAULT_CANCER_ANTECEDENTE_PATOLOGICO);
         assertThat(testAtencion.isTuberculosis()).isEqualTo(DEFAULT_TUBERCULOSIS);
         assertThat(testAtencion.isInsuficienciaRenal()).isEqualTo(DEFAULT_INSUFICIENCIA_RENAL);
-        assertThat(testAtencion.isvIHSida()).isEqualTo(DEFAULT_V_IH_SIDA);
+        assertThat(testAtencion.isVihSida()).isEqualTo(DEFAULT_VIH_SIDA);
         assertThat(testAtencion.isOtroAntecedentePatologico()).isEqualTo(DEFAULT_OTRO_ANTECEDENTE_PATOLOGICO);
         assertThat(testAtencion.getDescripcionOtroAntecedentePatologico()).isEqualTo(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO);
         assertThat(testAtencion.isCancerAntecedenteQuirurgico()).isEqualTo(DEFAULT_CANCER_ANTECEDENTE_QUIRURGICO);
         assertThat(testAtencion.isPomeroy()).isEqualTo(DEFAULT_POMEROY);
         assertThat(testAtencion.isOtroAntecedenteQuirurgico()).isEqualTo(DEFAULT_OTRO_ANTECEDENTE_QUIRURGICO);
         assertThat(testAtencion.getDescripcionOtroAntecedenteQuirurgico()).isEqualTo(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO);
-        assertThat(testAtencion.getfUR()).isEqualTo(DEFAULT_F_UR);
+        assertThat(testAtencion.getFur()).isEqualTo(DEFAULT_FUR);
         assertThat(testAtencion.isFormulaObstretica()).isEqualTo(DEFAULT_FORMULA_OBSTRETICA);
         assertThat(testAtencion.getG()).isEqualTo(DEFAULT_G);
         assertThat(testAtencion.getP()).isEqualTo(DEFAULT_P);
@@ -423,9 +423,9 @@ public class AtencionResourceIT {
         assertThat(testAtencion.getRevisionPorSistemas()).isEqualTo(DEFAULT_REVISION_POR_SISTEMAS);
         assertThat(testAtencion.getPeso()).isEqualTo(DEFAULT_PESO);
         assertThat(testAtencion.getTalla()).isEqualTo(DEFAULT_TALLA);
-        assertThat(testAtencion.getiMC()).isEqualTo(DEFAULT_I_MC);
-        assertThat(testAtencion.getfC()).isEqualTo(DEFAULT_F_C);
-        assertThat(testAtencion.getfR()).isEqualTo(DEFAULT_F_R);
+        assertThat(testAtencion.getImc()).isEqualTo(DEFAULT_IMC);
+        assertThat(testAtencion.getFc()).isEqualTo(DEFAULT_FC);
+        assertThat(testAtencion.getFr()).isEqualTo(DEFAULT_FR);
         assertThat(testAtencion.getTemperatura()).isEqualTo(DEFAULT_TEMPERATURA);
         assertThat(testAtencion.getSaturacion()).isEqualTo(DEFAULT_SATURACION);
         assertThat(testAtencion.getHemoglobina()).isEqualTo(DEFAULT_HEMOGLOBINA);
@@ -516,14 +516,14 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.[*].cancerAntecedentePatologico").value(hasItem(DEFAULT_CANCER_ANTECEDENTE_PATOLOGICO.booleanValue())))
             .andExpect(jsonPath("$.[*].tuberculosis").value(hasItem(DEFAULT_TUBERCULOSIS.booleanValue())))
             .andExpect(jsonPath("$.[*].insuficienciaRenal").value(hasItem(DEFAULT_INSUFICIENCIA_RENAL.booleanValue())))
-            .andExpect(jsonPath("$.[*].vIHSida").value(hasItem(DEFAULT_V_IH_SIDA.booleanValue())))
+            .andExpect(jsonPath("$.[*].vihSida").value(hasItem(DEFAULT_VIH_SIDA.booleanValue())))
             .andExpect(jsonPath("$.[*].otroAntecedentePatologico").value(hasItem(DEFAULT_OTRO_ANTECEDENTE_PATOLOGICO.booleanValue())))
             .andExpect(jsonPath("$.[*].descripcionOtroAntecedentePatologico").value(hasItem(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO.toString())))
             .andExpect(jsonPath("$.[*].cancerAntecedenteQuirurgico").value(hasItem(DEFAULT_CANCER_ANTECEDENTE_QUIRURGICO.booleanValue())))
             .andExpect(jsonPath("$.[*].pomeroy").value(hasItem(DEFAULT_POMEROY.booleanValue())))
             .andExpect(jsonPath("$.[*].otroAntecedenteQuirurgico").value(hasItem(DEFAULT_OTRO_ANTECEDENTE_QUIRURGICO.booleanValue())))
             .andExpect(jsonPath("$.[*].descripcionOtroAntecedenteQuirurgico").value(hasItem(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO.toString())))
-            .andExpect(jsonPath("$.[*].fUR").value(hasItem(DEFAULT_F_UR.toString())))
+            .andExpect(jsonPath("$.[*].fur").value(hasItem(DEFAULT_FUR.toString())))
             .andExpect(jsonPath("$.[*].formulaObstretica").value(hasItem(DEFAULT_FORMULA_OBSTRETICA.booleanValue())))
             .andExpect(jsonPath("$.[*].g").value(hasItem(DEFAULT_G)))
             .andExpect(jsonPath("$.[*].p").value(hasItem(DEFAULT_P)))
@@ -542,9 +542,9 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.[*].revisionPorSistemas").value(hasItem(DEFAULT_REVISION_POR_SISTEMAS.toString())))
             .andExpect(jsonPath("$.[*].peso").value(hasItem(DEFAULT_PESO.intValue())))
             .andExpect(jsonPath("$.[*].talla").value(hasItem(DEFAULT_TALLA.intValue())))
-            .andExpect(jsonPath("$.[*].iMC").value(hasItem(DEFAULT_I_MC.intValue())))
-            .andExpect(jsonPath("$.[*].fC").value(hasItem(DEFAULT_F_C)))
-            .andExpect(jsonPath("$.[*].fR").value(hasItem(DEFAULT_F_R)))
+            .andExpect(jsonPath("$.[*].imc").value(hasItem(DEFAULT_IMC.intValue())))
+            .andExpect(jsonPath("$.[*].fc").value(hasItem(DEFAULT_FC)))
+            .andExpect(jsonPath("$.[*].fr").value(hasItem(DEFAULT_FR)))
             .andExpect(jsonPath("$.[*].temperatura").value(hasItem(DEFAULT_TEMPERATURA.intValue())))
             .andExpect(jsonPath("$.[*].saturacion").value(hasItem(DEFAULT_SATURACION)))
             .andExpect(jsonPath("$.[*].hemoglobina").value(hasItem(DEFAULT_HEMOGLOBINA.intValue())))
@@ -615,14 +615,14 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.cancerAntecedentePatologico").value(DEFAULT_CANCER_ANTECEDENTE_PATOLOGICO.booleanValue()))
             .andExpect(jsonPath("$.tuberculosis").value(DEFAULT_TUBERCULOSIS.booleanValue()))
             .andExpect(jsonPath("$.insuficienciaRenal").value(DEFAULT_INSUFICIENCIA_RENAL.booleanValue()))
-            .andExpect(jsonPath("$.vIHSida").value(DEFAULT_V_IH_SIDA.booleanValue()))
+            .andExpect(jsonPath("$.vihSida").value(DEFAULT_VIH_SIDA.booleanValue()))
             .andExpect(jsonPath("$.otroAntecedentePatologico").value(DEFAULT_OTRO_ANTECEDENTE_PATOLOGICO.booleanValue()))
             .andExpect(jsonPath("$.descripcionOtroAntecedentePatologico").value(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO.toString()))
             .andExpect(jsonPath("$.cancerAntecedenteQuirurgico").value(DEFAULT_CANCER_ANTECEDENTE_QUIRURGICO.booleanValue()))
             .andExpect(jsonPath("$.pomeroy").value(DEFAULT_POMEROY.booleanValue()))
             .andExpect(jsonPath("$.otroAntecedenteQuirurgico").value(DEFAULT_OTRO_ANTECEDENTE_QUIRURGICO.booleanValue()))
             .andExpect(jsonPath("$.descripcionOtroAntecedenteQuirurgico").value(DEFAULT_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO.toString()))
-            .andExpect(jsonPath("$.fUR").value(DEFAULT_F_UR.toString()))
+            .andExpect(jsonPath("$.fur").value(DEFAULT_FUR.toString()))
             .andExpect(jsonPath("$.formulaObstretica").value(DEFAULT_FORMULA_OBSTRETICA.booleanValue()))
             .andExpect(jsonPath("$.g").value(DEFAULT_G))
             .andExpect(jsonPath("$.p").value(DEFAULT_P))
@@ -641,9 +641,9 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.revisionPorSistemas").value(DEFAULT_REVISION_POR_SISTEMAS.toString()))
             .andExpect(jsonPath("$.peso").value(DEFAULT_PESO.intValue()))
             .andExpect(jsonPath("$.talla").value(DEFAULT_TALLA.intValue()))
-            .andExpect(jsonPath("$.iMC").value(DEFAULT_I_MC.intValue()))
-            .andExpect(jsonPath("$.fC").value(DEFAULT_F_C))
-            .andExpect(jsonPath("$.fR").value(DEFAULT_F_R))
+            .andExpect(jsonPath("$.imc").value(DEFAULT_IMC.intValue()))
+            .andExpect(jsonPath("$.fc").value(DEFAULT_FC))
+            .andExpect(jsonPath("$.fr").value(DEFAULT_FR))
             .andExpect(jsonPath("$.temperatura").value(DEFAULT_TEMPERATURA.intValue()))
             .andExpect(jsonPath("$.saturacion").value(DEFAULT_SATURACION))
             .andExpect(jsonPath("$.hemoglobina").value(DEFAULT_HEMOGLOBINA.intValue()))
@@ -688,14 +688,14 @@ public class AtencionResourceIT {
             .cancerAntecedentePatologico(UPDATED_CANCER_ANTECEDENTE_PATOLOGICO)
             .tuberculosis(UPDATED_TUBERCULOSIS)
             .insuficienciaRenal(UPDATED_INSUFICIENCIA_RENAL)
-            .vIHSida(UPDATED_V_IH_SIDA)
+            .vihSida(UPDATED_VIH_SIDA)
             .otroAntecedentePatologico(UPDATED_OTRO_ANTECEDENTE_PATOLOGICO)
             .descripcionOtroAntecedentePatologico(UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO)
             .cancerAntecedenteQuirurgico(UPDATED_CANCER_ANTECEDENTE_QUIRURGICO)
             .pomeroy(UPDATED_POMEROY)
             .otroAntecedenteQuirurgico(UPDATED_OTRO_ANTECEDENTE_QUIRURGICO)
             .descripcionOtroAntecedenteQuirurgico(UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO)
-            .fUR(UPDATED_F_UR)
+            .fur(UPDATED_FUR)
             .formulaObstretica(UPDATED_FORMULA_OBSTRETICA)
             .g(UPDATED_G)
             .p(UPDATED_P)
@@ -714,9 +714,9 @@ public class AtencionResourceIT {
             .revisionPorSistemas(UPDATED_REVISION_POR_SISTEMAS)
             .peso(UPDATED_PESO)
             .talla(UPDATED_TALLA)
-            .iMC(UPDATED_I_MC)
-            .fC(UPDATED_F_C)
-            .fR(UPDATED_F_R)
+            .imc(UPDATED_IMC)
+            .fc(UPDATED_FC)
+            .fr(UPDATED_FR)
             .temperatura(UPDATED_TEMPERATURA)
             .saturacion(UPDATED_SATURACION)
             .hemoglobina(UPDATED_HEMOGLOBINA)
@@ -752,14 +752,14 @@ public class AtencionResourceIT {
         assertThat(testAtencion.isCancerAntecedentePatologico()).isEqualTo(UPDATED_CANCER_ANTECEDENTE_PATOLOGICO);
         assertThat(testAtencion.isTuberculosis()).isEqualTo(UPDATED_TUBERCULOSIS);
         assertThat(testAtencion.isInsuficienciaRenal()).isEqualTo(UPDATED_INSUFICIENCIA_RENAL);
-        assertThat(testAtencion.isvIHSida()).isEqualTo(UPDATED_V_IH_SIDA);
+        assertThat(testAtencion.isVihSida()).isEqualTo(UPDATED_VIH_SIDA);
         assertThat(testAtencion.isOtroAntecedentePatologico()).isEqualTo(UPDATED_OTRO_ANTECEDENTE_PATOLOGICO);
         assertThat(testAtencion.getDescripcionOtroAntecedentePatologico()).isEqualTo(UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_PATOLOGICO);
         assertThat(testAtencion.isCancerAntecedenteQuirurgico()).isEqualTo(UPDATED_CANCER_ANTECEDENTE_QUIRURGICO);
         assertThat(testAtencion.isPomeroy()).isEqualTo(UPDATED_POMEROY);
         assertThat(testAtencion.isOtroAntecedenteQuirurgico()).isEqualTo(UPDATED_OTRO_ANTECEDENTE_QUIRURGICO);
         assertThat(testAtencion.getDescripcionOtroAntecedenteQuirurgico()).isEqualTo(UPDATED_DESCRIPCION_OTRO_ANTECEDENTE_QUIRURGICO);
-        assertThat(testAtencion.getfUR()).isEqualTo(UPDATED_F_UR);
+        assertThat(testAtencion.getFur()).isEqualTo(UPDATED_FUR);
         assertThat(testAtencion.isFormulaObstretica()).isEqualTo(UPDATED_FORMULA_OBSTRETICA);
         assertThat(testAtencion.getG()).isEqualTo(UPDATED_G);
         assertThat(testAtencion.getP()).isEqualTo(UPDATED_P);
@@ -778,9 +778,9 @@ public class AtencionResourceIT {
         assertThat(testAtencion.getRevisionPorSistemas()).isEqualTo(UPDATED_REVISION_POR_SISTEMAS);
         assertThat(testAtencion.getPeso()).isEqualTo(UPDATED_PESO);
         assertThat(testAtencion.getTalla()).isEqualTo(UPDATED_TALLA);
-        assertThat(testAtencion.getiMC()).isEqualTo(UPDATED_I_MC);
-        assertThat(testAtencion.getfC()).isEqualTo(UPDATED_F_C);
-        assertThat(testAtencion.getfR()).isEqualTo(UPDATED_F_R);
+        assertThat(testAtencion.getImc()).isEqualTo(UPDATED_IMC);
+        assertThat(testAtencion.getFc()).isEqualTo(UPDATED_FC);
+        assertThat(testAtencion.getFr()).isEqualTo(UPDATED_FR);
         assertThat(testAtencion.getTemperatura()).isEqualTo(UPDATED_TEMPERATURA);
         assertThat(testAtencion.getSaturacion()).isEqualTo(UPDATED_SATURACION);
         assertThat(testAtencion.getHemoglobina()).isEqualTo(UPDATED_HEMOGLOBINA);
