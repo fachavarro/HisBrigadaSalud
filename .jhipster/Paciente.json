@@ -12,22 +12,28 @@
             "fieldName": "numeroDocumento",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required"
-            ]
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "nombre",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required"
-            ]
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "apellido",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required"
-            ]
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "genero",
@@ -38,7 +44,7 @@
         },
         {
             "fieldName": "fechaNacimiento",
-            "fieldType": "String",
+            "fieldType": "LocalDate",
             "fieldValidateRules": [
                 "required"
             ]
@@ -49,7 +55,11 @@
         },
         {
             "fieldName": "ocupacion",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "afiliadoSSS",
@@ -57,22 +67,36 @@
         },
         {
             "fieldName": "cualSSS",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "nacionalidad",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required"
-            ]
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "barrioVive",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "numeroTelefono",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
         },
         {
             "fieldName": "createdAt",
@@ -92,7 +116,7 @@
             "ownerSide": false
         }
     ],
-    "changelogDate": "20190729190031",
+    "changelogDate": "20190801223518",
     "entityTableName": "paciente",
     "dto": "no",
     "pagination": "no",

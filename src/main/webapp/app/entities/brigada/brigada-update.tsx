@@ -49,8 +49,6 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
   }
 
   saveEntity = (event, errors, values) => {
-    values.fechai = convertDateTimeToServer(values.fechai);
-    values.fechaf = convertDateTimeToServer(values.fechaf);
     values.createdAt = convertDateTimeToServer(values.createdAt);
     values.updatedAt = convertDateTimeToServer(values.updatedAt);
 
@@ -122,7 +120,8 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
                     type="text"
                     name="lugar"
                     validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                      required: { value: true, errorMessage: translate('entity.validation.required') },
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
                     }}
                   />
                 </AvGroup>
@@ -135,7 +134,8 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
                     type="text"
                     name="ciudad"
                     validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                      required: { value: true, errorMessage: translate('entity.validation.required') },
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
                     }}
                   />
                 </AvGroup>
@@ -143,13 +143,11 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
                   <Label id="fechaiLabel" for="brigada-fechai">
                     <Translate contentKey="hisBrigadaSaludApp.brigada.fechai">Fechai</Translate>
                   </Label>
-                  <AvInput
+                  <AvField
                     id="brigada-fechai"
-                    type="datetime-local"
+                    type="date"
                     className="form-control"
                     name="fechai"
-                    placeholder={'YYYY-MM-DD HH:mm'}
-                    value={isNew ? null : convertDateTimeFromServer(this.props.brigadaEntity.fechai)}
                     validate={{
                       required: { value: true, errorMessage: translate('entity.validation.required') }
                     }}
@@ -159,13 +157,11 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
                   <Label id="fechafLabel" for="brigada-fechaf">
                     <Translate contentKey="hisBrigadaSaludApp.brigada.fechaf">Fechaf</Translate>
                   </Label>
-                  <AvInput
+                  <AvField
                     id="brigada-fechaf"
-                    type="datetime-local"
+                    type="date"
                     className="form-control"
                     name="fechaf"
-                    placeholder={'YYYY-MM-DD HH:mm'}
-                    value={isNew ? null : convertDateTimeFromServer(this.props.brigadaEntity.fechaf)}
                     validate={{
                       required: { value: true, errorMessage: translate('entity.validation.required') }
                     }}

@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.time.LocalDate;
 
 /**
  * A Paciente.
@@ -25,14 +26,17 @@ public class Paciente implements Serializable {
     private String tipoDoc;
 
     @NotNull
+    @Size(max = 50)
     @Field("numero_documento")
     private String numeroDocumento;
 
     @NotNull
+    @Size(max = 50)
     @Field("nombre")
     private String nombre;
 
     @NotNull
+    @Size(max = 50)
     @Field("apellido")
     private String apellido;
 
@@ -42,27 +46,32 @@ public class Paciente implements Serializable {
 
     @NotNull
     @Field("fecha_nacimiento")
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
     @Field("acudiente")
     private String acudiente;
 
+    @Size(max = 50)
     @Field("ocupacion")
     private String ocupacion;
 
     @Field("afiliado_sss")
     private Boolean afiliadoSSS;
 
+    @Size(max = 50)
     @Field("cual_sss")
     private String cualSSS;
 
     @NotNull
+    @Size(max = 50)
     @Field("nacionalidad")
     private String nacionalidad;
 
+    @Size(max = 50)
     @Field("barrio_vive")
     private String barrioVive;
 
+    @Size(max = 10)
     @Field("numero_telefono")
     private String numeroTelefono;
 
@@ -151,16 +160,16 @@ public class Paciente implements Serializable {
         this.genero = genero;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public Paciente fechaNacimiento(String fechaNacimiento) {
+    public Paciente fechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
         return this;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

@@ -82,12 +82,13 @@ public class AtencionResource {
     /**
      * {@code GET  /atencions} : get all the atencions.
      *
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of atencions in body.
      */
     @GetMapping("/atencions")
-    public List<Atencion> getAllAtencions() {
+    public List<Atencion> getAllAtencions(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get all Atencions");
-        return atencionRepository.findAll();
+        return atencionRepository.findAllWithEagerRelationships();
     }
 
     /**
@@ -99,7 +100,7 @@ public class AtencionResource {
     @GetMapping("/atencions/{id}")
     public ResponseEntity<Atencion> getAtencion(@PathVariable String id) {
         log.debug("REST request to get Atencion : {}", id);
-        Optional<Atencion> atencion = atencionRepository.findById(id);
+        Optional<Atencion> atencion = atencionRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(atencion);
     }
 

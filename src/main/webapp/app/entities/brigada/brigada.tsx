@@ -75,10 +75,10 @@ export class Brigada extends React.Component<IBrigadaProps> {
                     <td>{brigada.lugar}</td>
                     <td>{brigada.ciudad}</td>
                     <td>
-                      <TextFormat type="date" value={brigada.fechai} format={APP_DATE_FORMAT} />
+                      <TextFormat type="date" value={brigada.fechai} format={APP_LOCAL_DATE_FORMAT} />
                     </td>
                     <td>
-                      <TextFormat type="date" value={brigada.fechaf} format={APP_DATE_FORMAT} />
+                      <TextFormat type="date" value={brigada.fechaf} format={APP_LOCAL_DATE_FORMAT} />
                     </td>
                     <td>
                       <TextFormat type="date" value={brigada.createdAt} format={APP_DATE_FORMAT} />

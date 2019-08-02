@@ -100,7 +100,9 @@ export class Paciente extends React.Component<IPacienteProps> {
                     <td>{paciente.nombre}</td>
                     <td>{paciente.apellido}</td>
                     <td>{paciente.genero}</td>
-                    <td>{paciente.fechaNacimiento}</td>
+                    <td>
+                      <TextFormat type="date" value={paciente.fechaNacimiento} format={APP_LOCAL_DATE_FORMAT} />
+                    </td>
                     <td>{paciente.acudiente}</td>
                     <td>{paciente.ocupacion}</td>
                     <td>{paciente.afiliadoSSS ? 'true' : 'false'}</td>

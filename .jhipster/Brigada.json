@@ -12,26 +12,30 @@
             "fieldName": "lugar",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required"
-            ]
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "ciudad",
             "fieldType": "String",
             "fieldValidateRules": [
-                "required"
-            ]
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
         },
         {
             "fieldName": "fechai",
-            "fieldType": "Instant",
+            "fieldType": "LocalDate",
             "fieldValidateRules": [
                 "required"
             ]
         },
         {
             "fieldName": "fechaf",
-            "fieldType": "Instant",
+            "fieldType": "LocalDate",
             "fieldValidateRules": [
                 "required"
             ]
@@ -54,7 +58,7 @@
             "ownerSide": false
         }
     ],
-    "changelogDate": "20190729190028",
+    "changelogDate": "20190801223515",
     "entityTableName": "brigada",
     "dto": "no",
     "pagination": "no",

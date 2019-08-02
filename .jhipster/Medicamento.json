@@ -1,0 +1,28 @@
+{
+    "name": "Medicamento",
+    "fields": [
+        {
+            "fieldName": "nombreMedicamento",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "atencion",
+            "otherEntityRelationshipName": "medicamentos",
+            "relationshipName": "atencion",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190801223519",
+    "entityTableName": "medicamento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

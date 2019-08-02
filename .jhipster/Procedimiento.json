@@ -1,0 +1,28 @@
+{
+    "name": "Procedimiento",
+    "fields": [
+        {
+            "fieldName": "nombreProcedimiento",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "atencion",
+            "otherEntityRelationshipName": "procedimientos",
+            "relationshipName": "atencion",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190801223520",
+    "entityTableName": "procedimiento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

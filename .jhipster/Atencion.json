@@ -17,6 +17,250 @@
         },
         {
             "fieldName": "otraEspecialidad",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "motivoConsulta",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "enfermedadActual",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "hipertensionArterial",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "diabetesMellitus",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "cancerAntecedentePatologico",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "tuberculosis",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "insuficienciaRenal",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "vIHSida",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "otroAntecedentePatologico",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "descripcionOtroAntecedentePatologico",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "cancerAntecedenteQuirurgico",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "pomeroy",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "otroAntecedenteQuirurgico",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "descripcionOtroAntecedenteQuirurgico",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "fUR",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "formulaObstretica",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "g",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "p",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "c",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "a",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "v",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "planificacionFamiliar",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "fechaUltimaCitologia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ultimoParto",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "mamografia",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "medicamentosAntecedentes",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "esquemaVacunacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fuma",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "alcohol",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sustanciasPsicoactivas",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "revisionPorSistemas",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "peso",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "talla",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "iMC",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "fC",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fR",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "temperatura",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "saturacion",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hemoglobina",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "glucometria",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "circunferenciaBrazo",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "circunferenciaAbdominal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "hallazgosExamenFisico",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "valoracionNutricional",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 4000
+        },
+        {
+            "fieldName": "diagnosticoPrincipal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "diagnosticoSecundario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacionesTratamiento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "recomendaciones",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2000
+        },
+        {
+            "fieldName": "destino",
             "fieldType": "String"
         },
         {
@@ -52,9 +296,25 @@
             "relationshipName": "usuario",
             "otherEntityField": "id",
             "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "medicamento",
+            "otherEntityRelationshipName": "atencion",
+            "relationshipName": "medicamentos",
+            "otherEntityField": "nombreMedicamento",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "procedimiento",
+            "otherEntityRelationshipName": "atencion",
+            "relationshipName": "procedimientos",
+            "otherEntityField": "nombreProcedimiento",
+            "ownerSide": true
         }
     ],
-    "changelogDate": "20190729190032",
+    "changelogDate": "20190801223521",
     "entityTableName": "atencion",
     "dto": "no",
     "pagination": "no",

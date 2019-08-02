@@ -52,7 +52,7 @@ export class BrigadaDetail extends React.Component<IBrigadaDetailProps> {
               </span>
             </dt>
             <dd>
-              <TextFormat value={brigadaEntity.fechai} type="date" format={APP_DATE_FORMAT} />
+              <TextFormat value={brigadaEntity.fechai} type="date" format={APP_LOCAL_DATE_FORMAT} />
             </dd>
             <dt>
               <span id="fechaf">
@@ -60,7 +60,7 @@ export class BrigadaDetail extends React.Component<IBrigadaDetailProps> {
               </span>
             </dt>
             <dd>
-              <TextFormat value={brigadaEntity.fechaf} type="date" format={APP_DATE_FORMAT} />
+              <TextFormat value={brigadaEntity.fechaf} type="date" format={APP_LOCAL_DATE_FORMAT} />
             </dd>
             <dt>
               <span id="createdAt">

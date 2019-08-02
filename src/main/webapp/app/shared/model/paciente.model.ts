@@ -8,7 +8,7 @@ export interface IPaciente {
   nombre?: string;
   apellido?: string;
   genero?: string;
-  fechaNacimiento?: string;
+  fechaNacimiento?: Moment;
   acudiente?: string;
   ocupacion?: string;
   afiliadoSSS?: boolean;

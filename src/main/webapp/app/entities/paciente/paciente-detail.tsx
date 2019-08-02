@@ -63,7 +63,9 @@ export class PacienteDetail extends React.Component<IPacienteDetailProps> {
                 <Translate contentKey="hisBrigadaSaludApp.paciente.fechaNacimiento">Fecha Nacimiento</Translate>
               </span>
             </dt>
-            <dd>{pacienteEntity.fechaNacimiento}</dd>
+            <dd>
+              <TextFormat value={pacienteEntity.fechaNacimiento} type="date" format={APP_LOCAL_DATE_FORMAT} />
+            </dd>
             <dt>
               <span id="acudiente">
                 <Translate contentKey="hisBrigadaSaludApp.paciente.acudiente">Acudiente</Translate>

@@ -2,10 +2,10 @@
 
 entity Brigada {
 	descripcion String required,
-    lugar String required,
-    ciudad String required,
-    fechai Instant required,
-    fechaf Instant required,
+    lugar String required maxlength(50),
+    ciudad String required maxlength(50),
+    fechai LocalDate required,
+    fechaf LocalDate required,
     createdAt Instant,
     updatedAt Instant
 }
@@ -34,33 +34,110 @@ entity Usuario {
 
 entity Paciente {
 	tipoDoc String required,
-    numeroDocumento String required,
-    nombre String required,
-    apellido String required,
+    numeroDocumento String required maxlength(50),
+    nombre String required maxlength(50),
+    apellido String required maxlength(50),
     genero String required,
-    fechaNacimiento String required,
+    fechaNacimiento LocalDate required,
     acudiente String, 
-    ocupacion String,
+    ocupacion String maxlength(50),
     afiliadoSSS Boolean,
-    cualSSS String,
-	nacionalidad String required,
-    barrioVive String, 
-    numeroTelefono String,
+    cualSSS String maxlength(50),
+	nacionalidad String required maxlength(50),
+    barrioVive String maxlength(50), 
+    numeroTelefono String maxlength(10),
     createdAt Instant,
     updatedAt Instant,
 }
 
+entity Medicamento {
+	nombreMedicamento String
+}
+
+entity Procedimiento {
+	nombreProcedimiento String
+}
+
 entity Atencion{
 	fecha Instant required,
-    especialidad String required,
-    otraEspecialidad String,
+	especialidad String required,
+    otraEspecialidad String maxlength(20),
+    
+    motivoConsulta String maxlength(1000),
+    enfermedadActual String maxlength(4000),
+    
+    hipertensionArterial Boolean,
+    diabetesMellitus Boolean,
+    cancerAntecedentePatologico Boolean,
+    tuberculosis Boolean,
+    insuficienciaRenal Boolean,
+    VIHSida Boolean,
+    otroAntecedentePatologico Boolean 
+    descripcionOtroAntecedentePatologico String maxlength(500),
+    
+    cancerAntecedenteQuirurgico Boolean,
+    pomeroy Boolean,
+    otroAntecedenteQuirurgico Boolean,
+    descripcionOtroAntecedenteQuirurgico String maxlength(500),
+    
+    FUR LocalDate,
+    formulaObstretica Boolean,
+    G Integer,
+    P Integer,
+    C Integer,
+    A Integer,
+    V Integer,
+    planificacionFamiliar String maxlength(100),
+    fechaUltimaCitologia String,
+    ultimoParto LocalDate,
+    mamografia Boolean,
+    
+    medicamentosAntecedentes String maxlength(1000),
+    
+    esquemaVacunacion String,
+    
+    fuma Boolean,
+    alcohol Boolean,
+    sustanciasPsicoactivas Boolean,
+    
+    revisionPorSistemas String maxlength(1000),
+    
+    peso BigDecimal,
+    talla BigDecimal,
+    IMC BigDecimal,
+    FC Integer,
+    FR Integer,
+    temperatura BigDecimal,
+    saturacion Integer,
+    hemoglobina BigDecimal,
+    glucometria Integer,
+    circunferenciaBrazo BigDecimal,
+    circunferenciaAbdominal BigDecimal,
+    hallazgosExamenFisico String maxlength(4000),
+    valoracionNutricional String maxlength(4000),
+    
+    diagnosticoPrincipal String,
+    diagnosticoSecundario String,
+    
+    observacionesTratamiento String maxlength(1000),
+    recomendaciones String maxlength(2000),
+    destino String,
+    
     createdAt Instant,
 	updatedAt Instant
 }
 relationship OneToOne {
 	Atencion to Brigada,
     Atencion to Paciente,
-    Atencion to Usuario
+    Atencion to Usuario   
 }
+
+relationship ManyToMany {
+	Atencion{medicamentos(nombreMedicamento)} to Medicamento{Atencion},
+    Atencion{procedimientos(nombreProcedimiento)} to Procedimiento{Atencion}
+}
+
+
+
 
 

@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.time.LocalDate;
 
 /**
  * A Brigada.
@@ -25,20 +26,22 @@ public class Brigada implements Serializable {
     private String descripcion;
 
     @NotNull
+    @Size(max = 50)
     @Field("lugar")
     private String lugar;
 
     @NotNull
+    @Size(max = 50)
     @Field("ciudad")
     private String ciudad;
 
     @NotNull
     @Field("fechai")
-    private Instant fechai;
+    private LocalDate fechai;
 
     @NotNull
     @Field("fechaf")
-    private Instant fechaf;
+    private LocalDate fechaf;
 
     @Field("created_at")
     private Instant createdAt;
@@ -99,29 +102,29 @@ public class Brigada implements Serializable {
         this.ciudad = ciudad;
     }
 
-    public Instant getFechai() {
+    public LocalDate getFechai() {
         return fechai;
     }
 
-    public Brigada fechai(Instant fechai) {
+    public Brigada fechai(LocalDate fechai) {
         this.fechai = fechai;
         return this;
     }
 
-    public void setFechai(Instant fechai) {
+    public void setFechai(LocalDate fechai) {
         this.fechai = fechai;
     }
 
-    public Instant getFechaf() {
+    public LocalDate getFechaf() {
         return fechaf;
     }
 
-    public Brigada fechaf(Instant fechaf) {
+    public Brigada fechaf(LocalDate fechaf) {
         this.fechaf = fechaf;
         return this;
     }
 
-    public void setFechaf(Instant fechaf) {
+    public void setFechaf(LocalDate fechaf) {
         this.fechaf = fechaf;
     }
 

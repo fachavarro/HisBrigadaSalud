@@ -120,7 +120,8 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                     type="text"
                     name="numeroDocumento"
                     validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                      required: { value: true, errorMessage: translate('entity.validation.required') },
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
                     }}
                   />
                 </AvGroup>
@@ -133,7 +134,8 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                     type="text"
                     name="nombre"
                     validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                      required: { value: true, errorMessage: translate('entity.validation.required') },
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
                     }}
                   />
                 </AvGroup>
@@ -146,7 +148,8 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                     type="text"
                     name="apellido"
                     validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                      required: { value: true, errorMessage: translate('entity.validation.required') },
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
                     }}
                   />
                 </AvGroup>
@@ -169,7 +172,8 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                   </Label>
                   <AvField
                     id="paciente-fechaNacimiento"
-                    type="text"
+                    type="date"
+                    className="form-control"
                     name="fechaNacimiento"
                     validate={{
                       required: { value: true, errorMessage: translate('entity.validation.required') }
@@ -186,7 +190,14 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                   <Label id="ocupacionLabel" for="paciente-ocupacion">
                     <Translate contentKey="hisBrigadaSaludApp.paciente.ocupacion">Ocupacion</Translate>
                   </Label>
-                  <AvField id="paciente-ocupacion" type="text" name="ocupacion" />
+                  <AvField
+                    id="paciente-ocupacion"
+                    type="text"
+                    name="ocupacion"
+                    validate={{
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
+                    }}
+                  />
                 </AvGroup>
                 <AvGroup>
                   <Label id="afiliadoSSSLabel" check>
@@ -198,7 +209,14 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                   <Label id="cualSSSLabel" for="paciente-cualSSS">
                     <Translate contentKey="hisBrigadaSaludApp.paciente.cualSSS">Cual SSS</Translate>
                   </Label>
-                  <AvField id="paciente-cualSSS" type="text" name="cualSSS" />
+                  <AvField
+                    id="paciente-cualSSS"
+                    type="text"
+                    name="cualSSS"
+                    validate={{
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
+                    }}
+                  />
                 </AvGroup>
                 <AvGroup>
                   <Label id="nacionalidadLabel" for="paciente-nacionalidad">
@@ -209,7 +227,8 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                     type="text"
                     name="nacionalidad"
                     validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                      required: { value: true, errorMessage: translate('entity.validation.required') },
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
                     }}
                   />
                 </AvGroup>
@@ -217,13 +236,27 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
                   <Label id="barrioViveLabel" for="paciente-barrioVive">
                     <Translate contentKey="hisBrigadaSaludApp.paciente.barrioVive">Barrio Vive</Translate>
                   </Label>
-                  <AvField id="paciente-barrioVive" type="text" name="barrioVive" />
+                  <AvField
+                    id="paciente-barrioVive"
+                    type="text"
+                    name="barrioVive"
+                    validate={{
+                      maxLength: { value: 50, errorMessage: translate('entity.validation.maxlength', { max: 50 }) }
+                    }}
+                  />
                 </AvGroup>
                 <AvGroup>
                   <Label id="numeroTelefonoLabel" for="paciente-numeroTelefono">
                     <Translate contentKey="hisBrigadaSaludApp.paciente.numeroTelefono">Numero Telefono</Translate>
                   </Label>
-                  <AvField id="paciente-numeroTelefono" type="text" name="numeroTelefono" />
+                  <AvField
+                    id="paciente-numeroTelefono"
+                    type="text"
+                    name="numeroTelefono"
+                    validate={{
+                      maxLength: { value: 10, errorMessage: translate('entity.validation.maxlength', { max: 10 }) }
+                    }}
+                  />
                 </AvGroup>
                 <AvGroup>
                   <Label id="createdAtLabel" for="paciente-createdAt">

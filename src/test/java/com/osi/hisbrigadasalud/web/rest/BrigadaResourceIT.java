@@ -18,7 +18,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.Validator;
 
 
+import java.time.LocalDate;
 import java.time.Instant;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -43,11 +45,11 @@ public class BrigadaResourceIT {
     private static final String DEFAULT_CIUDAD = "AAAAAAAAAA";
     private static final String UPDATED_CIUDAD = "BBBBBBBBBB";
 
-    private static final Instant DEFAULT_FECHAI = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_FECHAI = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final LocalDate DEFAULT_FECHAI = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_FECHAI = LocalDate.now(ZoneId.systemDefault());
 
-    private static final Instant DEFAULT_FECHAF = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_FECHAF = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final LocalDate DEFAULT_FECHAF = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_FECHAF = LocalDate.now(ZoneId.systemDefault());
 
     private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);

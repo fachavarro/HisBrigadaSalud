@@ -18,7 +18,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.Validator;
 
 
+import java.time.LocalDate;
 import java.time.Instant;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -49,8 +51,8 @@ public class PacienteResourceIT {
     private static final String DEFAULT_GENERO = "AAAAAAAAAA";
     private static final String UPDATED_GENERO = "BBBBBBBBBB";
 
-    private static final String DEFAULT_FECHA_NACIMIENTO = "AAAAAAAAAA";
-    private static final String UPDATED_FECHA_NACIMIENTO = "BBBBBBBBBB";
+    private static final LocalDate DEFAULT_FECHA_NACIMIENTO = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_FECHA_NACIMIENTO = LocalDate.now(ZoneId.systemDefault());
 
     private static final String DEFAULT_ACUDIENTE = "AAAAAAAAAA";
     private static final String UPDATED_ACUDIENTE = "BBBBBBBBBB";
