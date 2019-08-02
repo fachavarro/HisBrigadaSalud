@@ -1,5 +1,4 @@
 import { Moment } from 'moment';
-import { IAtencion } from 'app/shared/model/atencion.model';
 
 export interface IUsuario {
   id?: string;
@@ -13,7 +12,6 @@ export interface IUsuario {
   contrasena?: string;
   createdAt?: Moment;
   updatedAt?: Moment;
-  atencion?: IAtencion;
 }
 
 export const defaultValue: Readonly<IUsuario> = {};

@@ -1,5 +1,4 @@
 import { Moment } from 'moment';
-import { IAtencion } from 'app/shared/model/atencion.model';
 
 export interface IPaciente {
   id?: string;
@@ -18,7 +17,6 @@ export interface IPaciente {
   numeroTelefono?: string;
   createdAt?: Moment;
   updatedAt?: Moment;
-  atencion?: IAtencion;
 }
 
 export const defaultValue: Readonly<IPaciente> = {

@@ -8,8 +8,6 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IAtencion } from 'app/shared/model/atencion.model';
-import { getEntities as getAtencions } from 'app/entities/atencion/atencion.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './paciente.reducer';
 import { IPaciente } from 'app/shared/model/paciente.model';
 // tslint:disable-next-line:no-unused-variable
@@ -20,14 +18,12 @@ export interface IPacienteUpdateProps extends StateProps, DispatchProps, RouteCo
 
 export interface IPacienteUpdateState {
   isNew: boolean;
-  atencionId: string;
 }
 
 export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacienteUpdateState> {
   constructor(props) {
     super(props);
     this.state = {
-      atencionId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -44,8 +40,6 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
     } else {
       this.props.getEntity(this.props.match.params.id);
     }
-
-    this.props.getAtencions();
   }
 
   saveEntity = (event, errors, values) => {
@@ -72,7 +66,7 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
   };
 
   render() {
-    const { pacienteEntity, atencions, loading, updating } = this.props;
+    const { pacienteEntity, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -307,7 +301,6 @@ export class PacienteUpdate extends React.Component<IPacienteUpdateProps, IPacie
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  atencions: storeState.atencion.entities,
   pacienteEntity: storeState.paciente.entity,
   loading: storeState.paciente.loading,
   updating: storeState.paciente.updating,
@@ -315,7 +308,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getAtencions,
   getEntity,
   updateEntity,
   createEntity,

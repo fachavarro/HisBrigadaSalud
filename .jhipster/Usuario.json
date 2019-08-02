@@ -66,16 +66,8 @@
             "fieldType": "Instant"
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "atencion",
-            "otherEntityRelationshipName": "usuario",
-            "relationshipName": "atencion",
-            "ownerSide": false
-        }
-    ],
-    "changelogDate": "20190802151056",
+    "relationships": [],
+    "changelogDate": "20190802163724",
     "entityTableName": "usuario",
     "dto": "no",
     "pagination": "no",

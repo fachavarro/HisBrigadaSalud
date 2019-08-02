@@ -18,9 +18,6 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing {@link com.osi.hisbrigadasalud.domain.Paciente}.
@@ -85,18 +82,10 @@ public class PacienteResource {
     /**
      * {@code GET  /pacientes} : get all the pacientes.
      *
-     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of pacientes in body.
      */
     @GetMapping("/pacientes")
-    public List<Paciente> getAllPacientes(@RequestParam(required = false) String filter) {
-        if ("atencion-is-null".equals(filter)) {
-            log.debug("REST request to get all Pacientes where atencion is null");
-            return StreamSupport
-                .stream(pacienteRepository.findAll().spliterator(), false)
-                .filter(paciente -> paciente.getAtencion() == null)
-                .collect(Collectors.toList());
-        }
+    public List<Paciente> getAllPacientes() {
         log.debug("REST request to get all Pacientes");
         return pacienteRepository.findAll();
     }
@@ -112,64 +101,6 @@ public class PacienteResource {
         log.debug("REST request to get Paciente : {}", id);
         Optional<Paciente> paciente = pacienteRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(paciente);
-    }
-    
-    /**
-     * {@code GET  /pacientes/:tipoDoc numeroDocumento} : get the "tipoDoc and numeroDocumento" paciente.
-     *
-     * @param tipoDoc the tipoDoc of the paciente to retrieve.
-     * @param numeroDocumento the numeroDocumento of the paciente to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the paciente, or with status {@code 404 (Not Found)}.
-     */
-    @GetMapping("/pacientes/{tipoDoc}/{numeroDocumento}")
-    public ResponseEntity<Paciente> getPaciente(@PathVariable String tipoDoc, @PathVariable String numeroDocumento ) {
-    	Optional<Paciente> paciente  = null;
-    	String idDefault = "-1";
-    	log.debug("REST request to get Paciente : {}", tipoDoc +"  {}:"+numeroDocumento);
-        List<Paciente> listPacientes = pacienteRepository.findAll();
-        for (Paciente dto:listPacientes) {
-        	if (dto.getTipoDoc().equalsIgnoreCase(tipoDoc) && dto.getNumeroDocumento().equals(numeroDocumento)) {
-        		paciente =  pacienteRepository.findById(dto.getId());
-        		break;
-        	}
-        }
-        
-        if (paciente == null) {
-        	paciente =  pacienteRepository.findById(idDefault);
-        }
-        
-        //Optional<Paciente> paciente = pacienteRepository.findById(tipoId);
-        return ResponseUtil.wrapOrNotFound(paciente);
-    }
-    
-    /**
-     * {@code GET  /pacientes/nombre} : get all the pacientes by name.
-     *
-     * @param nombre the nombre of the request.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of pacientes in body.
-     */
-    @GetMapping("/pacientes/nombre/{nombre}")
-    public List<Paciente> getAllPacientesByName(@PathVariable String nombre) {
-        
-            log.debug("REST request to get all Pacientes where filter "+nombre);
-            
-            String[] words = nombre.split(" ");
-            
-            StringBuilder regexp = new StringBuilder();
-            for (String word : words) {
-                regexp.append("(?=.*").append(word.toLowerCase()).append(")");
-            }
-         
-            Pattern pattern = Pattern.compile(regexp.toString());
-            log.debug("REST request to get all Pacientes by name");
-            
-            return StreamSupport
-                .stream(pacienteRepository.findAll().spliterator(), false)
-                .filter(paciente -> pattern.matcher((paciente.getNombre() +" "+paciente.getApellido()).toLowerCase()).find())
-                .collect(Collectors.toList());
-        
-        
-        //return pacienteRepository.findAll();
     }
 
     /**

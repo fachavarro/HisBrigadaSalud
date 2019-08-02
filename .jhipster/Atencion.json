@@ -286,7 +286,7 @@
             "otherEntityName": "paciente",
             "otherEntityRelationshipName": "atencion",
             "relationshipName": "paciente",
-            "otherEntityField": "id",
+            "otherEntityField": "nombre",
             "ownerSide": true
         },
         {
@@ -294,7 +294,7 @@
             "otherEntityName": "usuario",
             "otherEntityRelationshipName": "atencion",
             "relationshipName": "usuario",
-            "otherEntityField": "id",
+            "otherEntityField": "nombre",
             "ownerSide": true
         },
         {
@@ -314,7 +314,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20190802151100",
+    "changelogDate": "20190802163728",
     "entityTableName": "atencion",
     "dto": "no",
     "pagination": "no",

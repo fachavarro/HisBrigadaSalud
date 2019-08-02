@@ -107,16 +107,8 @@
             "fieldType": "Instant"
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "atencion",
-            "otherEntityRelationshipName": "paciente",
-            "relationshipName": "atencion",
-            "ownerSide": false
-        }
-    ],
-    "changelogDate": "20190802151057",
+    "relationships": [],
+    "changelogDate": "20190802163725",
     "entityTableName": "paciente",
     "dto": "no",
     "pagination": "no",

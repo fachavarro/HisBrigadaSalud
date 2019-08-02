@@ -373,11 +373,11 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.paciente">Paciente</Translate>
             </dt>
-            <dd>{atencionEntity.paciente ? atencionEntity.paciente.id : ''}</dd>
+            <dd>{atencionEntity.paciente ? atencionEntity.paciente.nombre : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.usuario">Usuario</Translate>
             </dt>
-            <dd>{atencionEntity.usuario ? atencionEntity.usuario.id : ''}</dd>
+            <dd>{atencionEntity.usuario ? atencionEntity.usuario.nombre : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
             </dt>

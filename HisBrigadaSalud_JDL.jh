@@ -128,8 +128,8 @@ entity Atencion{
 }
 relationship OneToOne {
 	Atencion{brigada(descripcion)} to Brigada,
-    Atencion to Paciente,
-    Atencion to Usuario   
+    Atencion{paciente(nombre)} to Paciente,
+    Atencion{usuario(nombre)} to Usuario   
 }
 
 relationship ManyToMany {

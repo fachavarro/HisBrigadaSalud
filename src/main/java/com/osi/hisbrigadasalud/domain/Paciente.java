@@ -1,9 +1,7 @@
 package com.osi.hisbrigadasalud.domain;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
@@ -80,11 +78,6 @@ public class Paciente implements Serializable {
 
     @Field("updated_at")
     private Instant updatedAt;
-
-    @DBRef
-    @Field("atencion")
-    @com.fasterxml.jackson.annotation.JsonBackReference
-    private Atencion atencion;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
@@ -288,19 +281,6 @@ public class Paciente implements Serializable {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public Atencion getAtencion() {
-        return atencion;
-    }
-
-    public Paciente atencion(Atencion atencion) {
-        this.atencion = atencion;
-        return this;
-    }
-
-    public void setAtencion(Atencion atencion) {
-        this.atencion = atencion;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
