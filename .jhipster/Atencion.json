@@ -278,7 +278,7 @@
             "otherEntityName": "brigada",
             "otherEntityRelationshipName": "atencion",
             "relationshipName": "brigada",
-            "otherEntityField": "id",
+            "otherEntityField": "descripcion",
             "ownerSide": true
         },
         {
@@ -314,7 +314,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20190802140724",
+    "changelogDate": "20190802151100",
     "entityTableName": "atencion",
     "dto": "no",
     "pagination": "no",

@@ -8,8 +8,6 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IAtencion } from 'app/shared/model/atencion.model';
-import { getEntities as getAtencions } from 'app/entities/atencion/atencion.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './brigada.reducer';
 import { IBrigada } from 'app/shared/model/brigada.model';
 // tslint:disable-next-line:no-unused-variable
@@ -20,14 +18,12 @@ export interface IBrigadaUpdateProps extends StateProps, DispatchProps, RouteCom
 
 export interface IBrigadaUpdateState {
   isNew: boolean;
-  atencionId: string;
 }
 
 export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigadaUpdateState> {
   constructor(props) {
     super(props);
     this.state = {
-      atencionId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -44,8 +40,6 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
     } else {
       this.props.getEntity(this.props.match.params.id);
     }
-
-    this.props.getAtencions();
   }
 
   saveEntity = (event, errors, values) => {
@@ -72,7 +66,7 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
   };
 
   render() {
-    const { brigadaEntity, atencions, loading, updating } = this.props;
+    const { brigadaEntity, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -216,7 +210,6 @@ export class BrigadaUpdate extends React.Component<IBrigadaUpdateProps, IBrigada
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
-  atencions: storeState.atencion.entities,
   brigadaEntity: storeState.brigada.entity,
   loading: storeState.brigada.loading,
   updating: storeState.brigada.updating,
@@ -224,7 +217,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getAtencions,
   getEntity,
   updateEntity,
   createEntity,

@@ -127,7 +127,7 @@ entity Atencion{
 	updatedAt Instant
 }
 relationship OneToOne {
-	Atencion to Brigada,
+	Atencion{brigada(descripcion)} to Brigada,
     Atencion to Paciente,
     Atencion to Usuario   
 }

@@ -33,7 +33,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190802140719",
+    "changelogDate": "20190802151055",
     "entityTableName": "servidor_api",
     "dto": "no",
     "pagination": "no",

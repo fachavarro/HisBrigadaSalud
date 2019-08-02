@@ -597,7 +597,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                     {brigadas
                       ? brigadas.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.descripcion}
                           </option>
                         ))
                       : null}

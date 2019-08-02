@@ -1,5 +1,4 @@
 import { Moment } from 'moment';
-import { IAtencion } from 'app/shared/model/atencion.model';
 
 export interface IBrigada {
   id?: string;
@@ -10,7 +9,6 @@ export interface IBrigada {
   fechaf?: Moment;
   createdAt?: Moment;
   updatedAt?: Moment;
-  atencion?: IAtencion;
 }
 
 export const defaultValue: Readonly<IBrigada> = {};

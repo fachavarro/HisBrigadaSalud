@@ -369,7 +369,7 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.brigada">Brigada</Translate>
             </dt>
-            <dd>{atencionEntity.brigada ? atencionEntity.brigada.id : ''}</dd>
+            <dd>{atencionEntity.brigada ? atencionEntity.brigada.descripcion : ''}</dd>
             <dt>
               <Translate contentKey="hisBrigadaSaludApp.atencion.paciente">Paciente</Translate>
             </dt>

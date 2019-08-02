@@ -18,8 +18,6 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing {@link com.osi.hisbrigadasalud.domain.Brigada}.
@@ -84,18 +82,10 @@ public class BrigadaResource {
     /**
      * {@code GET  /brigadas} : get all the brigadas.
      *
-     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of brigadas in body.
      */
     @GetMapping("/brigadas")
-    public List<Brigada> getAllBrigadas(@RequestParam(required = false) String filter) {
-        if ("atencion-is-null".equals(filter)) {
-            log.debug("REST request to get all Brigadas where atencion is null");
-            return StreamSupport
-                .stream(brigadaRepository.findAll().spliterator(), false)
-                .filter(brigada -> brigada.getAtencion() == null)
-                .collect(Collectors.toList());
-        }
+    public List<Brigada> getAllBrigadas() {
         log.debug("REST request to get all Brigadas");
         return brigadaRepository.findAll();
     }

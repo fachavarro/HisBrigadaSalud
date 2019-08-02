@@ -49,16 +49,8 @@
             "fieldType": "Instant"
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "atencion",
-            "otherEntityRelationshipName": "brigada",
-            "relationshipName": "atencion",
-            "ownerSide": false
-        }
-    ],
-    "changelogDate": "20190802140718",
+    "relationships": [],
+    "changelogDate": "20190802151054",
     "entityTableName": "brigada",
     "dto": "no",
     "pagination": "no",
