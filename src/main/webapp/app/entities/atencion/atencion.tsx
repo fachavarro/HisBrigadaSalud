@@ -195,6 +195,12 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <Translate contentKey="hisBrigadaSaludApp.atencion.diagnosticoSecundario">Diagnostico Secundario</Translate>
                   </th>
                   <th>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
+                  </th>
+                  <th>
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.procedimientos">Procedimientos</Translate>
+                  </th>
+                  <th>
                     <Translate contentKey="hisBrigadaSaludApp.atencion.observacionesTratamiento">Observaciones Tratamiento</Translate>
                   </th>
                   <th>
@@ -217,12 +223,6 @@ export class Atencion extends React.Component<IAtencionProps> {
                   </th>
                   <th>
                     <Translate contentKey="hisBrigadaSaludApp.atencion.usuario">Usuario</Translate>
-                  </th>
-                  <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
-                  </th>
-                  <th>
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.procedimientos">Procedimientos</Translate>
                   </th>
                   <th />
                 </tr>
@@ -290,6 +290,8 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>{atencion.valoracionNutricional}</td>
                     <td>{atencion.diagnosticoPrincipal}</td>
                     <td>{atencion.diagnosticoSecundario}</td>
+                    <td>{atencion.medicamentos}</td>
+                    <td>{atencion.procedimientos}</td>
                     <td>{atencion.observacionesTratamiento}</td>
                     <td>{atencion.recomendaciones}</td>
                     <td>{atencion.destino}</td>
@@ -302,26 +304,6 @@ export class Atencion extends React.Component<IAtencionProps> {
                     <td>{atencion.brigada ? <Link to={`brigada/${atencion.brigada.id}`}>{atencion.brigada.descripcion}</Link> : ''}</td>
                     <td>{atencion.paciente ? <Link to={`paciente/${atencion.paciente.id}`}>{atencion.paciente.nombre}</Link> : ''}</td>
                     <td>{atencion.usuario ? <Link to={`usuario/${atencion.usuario.id}`}>{atencion.usuario.nombre}</Link> : ''}</td>
-                    <td>
-                      {atencion.medicamentos
-                        ? atencion.medicamentos.map((val, j) => (
-                            <span key={j}>
-                              <Link to={`medicamento/${val.id}`}>{val.nombreMedicamento}</Link>
-                              {j === atencion.medicamentos.length - 1 ? '' : ', '}
-                            </span>
-                          ))
-                        : null}
-                    </td>
-                    <td>
-                      {atencion.procedimientos
-                        ? atencion.procedimientos.map((val, j) => (
-                            <span key={j}>
-                              <Link to={`procedimiento/${val.id}`}>{val.nombreProcedimiento}</Link>
-                              {j === atencion.procedimientos.length - 1 ? '' : ', '}
-                            </span>
-                          ))
-                        : null}
-                    </td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${atencion.id}`} color="info" size="sm">

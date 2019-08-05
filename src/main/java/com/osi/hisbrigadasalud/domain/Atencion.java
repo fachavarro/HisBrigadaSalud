@@ -9,8 +9,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Atencion.
@@ -182,6 +180,12 @@ public class Atencion implements Serializable {
     @Field("diagnostico_secundario")
     private String diagnosticoSecundario;
 
+    @Field("medicamentos")
+    private String[] medicamentos;
+
+    @Field("procedimientos")
+    private String[] procedimientos;
+
     @Size(max = 1000)
     @Field("observaciones_tratamiento")
     private String observacionesTratamiento;
@@ -210,14 +214,6 @@ public class Atencion implements Serializable {
     @DBRef
     @Field("usuario")
     private Usuario usuario;
-
-    @DBRef
-    @Field("medicamentos")
-    private Set<Medicamento> medicamentos = new HashSet<>();
-
-    @DBRef
-    @Field("procedimientos")
-    private Set<Procedimiento> procedimientos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
@@ -865,6 +861,32 @@ public class Atencion implements Serializable {
         this.diagnosticoSecundario = diagnosticoSecundario;
     }
 
+    public String[] getMedicamentos() {
+        return medicamentos;
+    }
+
+    public Atencion medicamentos(String[] medicamentos) {
+        this.medicamentos = medicamentos;
+        return this;
+    }
+
+    public void setMedicamentos(String[] medicamentos) {
+        this.medicamentos = medicamentos;
+    }
+
+    public String[] getProcedimientos() {
+        return procedimientos;
+    }
+
+    public Atencion procedimientos(String[] procedimientos) {
+        this.procedimientos = procedimientos;
+        return this;
+    }
+
+    public void setProcedimientos(String[] procedimientos) {
+        this.procedimientos = procedimientos;
+    }
+
     public String getObservacionesTratamiento() {
         return observacionesTratamiento;
     }
@@ -968,56 +990,6 @@ public class Atencion implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
-    public Set<Medicamento> getMedicamentos() {
-        return medicamentos;
-    }
-
-    public Atencion medicamentos(Set<Medicamento> medicamentos) {
-        this.medicamentos = medicamentos;
-        return this;
-    }
-
-    public Atencion addMedicamentos(Medicamento medicamento) {
-        this.medicamentos.add(medicamento);
-        medicamento.getAtencions().add(this);
-        return this;
-    }
-
-    public Atencion removeMedicamentos(Medicamento medicamento) {
-        this.medicamentos.remove(medicamento);
-        medicamento.getAtencions().remove(this);
-        return this;
-    }
-
-    public void setMedicamentos(Set<Medicamento> medicamentos) {
-        this.medicamentos = medicamentos;
-    }
-
-    public Set<Procedimiento> getProcedimientos() {
-        return procedimientos;
-    }
-
-    public Atencion procedimientos(Set<Procedimiento> procedimientos) {
-        this.procedimientos = procedimientos;
-        return this;
-    }
-
-    public Atencion addProcedimientos(Procedimiento procedimiento) {
-        this.procedimientos.add(procedimiento);
-        procedimiento.getAtencions().add(this);
-        return this;
-    }
-
-    public Atencion removeProcedimientos(Procedimiento procedimiento) {
-        this.procedimientos.remove(procedimiento);
-        procedimiento.getAtencions().remove(this);
-        return this;
-    }
-
-    public void setProcedimientos(Set<Procedimiento> procedimientos) {
-        this.procedimientos = procedimientos;
-    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -1089,6 +1061,8 @@ public class Atencion implements Serializable {
             ", valoracionNutricional='" + getValoracionNutricional() + "'" +
             ", diagnosticoPrincipal='" + getDiagnosticoPrincipal() + "'" +
             ", diagnosticoSecundario='" + getDiagnosticoSecundario() + "'" +
+            ", medicamentos='" + getMedicamentos() + "'" +
+            ", procedimientos='" + getProcedimientos() + "'" +
             ", observacionesTratamiento='" + getObservacionesTratamiento() + "'" +
             ", recomendaciones='" + getRecomendaciones() + "'" +
             ", destino='" + getDestino() + "'" +

@@ -29,14 +29,6 @@ import paciente, {
   PacienteState
 } from 'app/entities/paciente/paciente.reducer';
 // prettier-ignore
-import medicamento, {
-  MedicamentoState
-} from 'app/entities/medicamento/medicamento.reducer';
-// prettier-ignore
-import procedimiento, {
-  ProcedimientoState
-} from 'app/entities/procedimiento/procedimiento.reducer';
-// prettier-ignore
 import atencion, {
   AtencionState
 } from 'app/entities/atencion/atencion.reducer';
@@ -58,8 +50,6 @@ export interface IRootState {
   readonly usuario: UsuarioState;
   readonly paciente: PacienteState;
   readonly atencion: AtencionState;
-  readonly medicamento: MedicamentoState;
-  readonly procedimiento: ProcedimientoState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -80,8 +70,6 @@ const rootReducer = combineReducers<IRootState>({
   usuario,
   paciente,
   atencion,
-  medicamento,
-  procedimiento,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });

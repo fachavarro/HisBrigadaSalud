@@ -2,8 +2,6 @@ import { Moment } from 'moment';
 import { IBrigada } from 'app/shared/model/brigada.model';
 import { IPaciente } from 'app/shared/model/paciente.model';
 import { IUsuario } from 'app/shared/model/usuario.model';
-import { IMedicamento } from 'app/shared/model/medicamento.model';
-import { IProcedimiento } from 'app/shared/model/procedimiento.model';
 
 export interface IAtencion {
   id?: string;
@@ -56,6 +54,8 @@ export interface IAtencion {
   valoracionNutricional?: string;
   diagnosticoPrincipal?: string;
   diagnosticoSecundario?: string;
+  medicamentos?: string;
+  procedimientos?: string;
   observacionesTratamiento?: string;
   recomendaciones?: string;
   destino?: string;
@@ -64,8 +64,6 @@ export interface IAtencion {
   brigada?: IBrigada;
   paciente?: IPaciente;
   usuario?: IUsuario;
-  medicamentos?: IMedicamento[];
-  procedimientos?: IProcedimiento[];
 }
 
 export const defaultValue: Readonly<IAtencion> = {

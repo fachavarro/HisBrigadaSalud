@@ -67,7 +67,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190802163724",
+    "changelogDate": "20190802223338",
     "entityTableName": "usuario",
     "dto": "no",
     "pagination": "no",

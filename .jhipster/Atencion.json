@@ -244,6 +244,14 @@
             "fieldType": "String"
         },
         {
+            "fieldName": "medicamentos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "procedimientos",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "observacionesTratamiento",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -296,25 +304,9 @@
             "relationshipName": "usuario",
             "otherEntityField": "nombre",
             "ownerSide": true
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityName": "medicamento",
-            "otherEntityRelationshipName": "atencion",
-            "relationshipName": "medicamentos",
-            "otherEntityField": "nombreMedicamento",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityName": "procedimiento",
-            "otherEntityRelationshipName": "atencion",
-            "relationshipName": "procedimientos",
-            "otherEntityField": "nombreProcedimiento",
-            "ownerSide": true
         }
     ],
-    "changelogDate": "20190802163728",
+    "changelogDate": "20190802223340",
     "entityTableName": "atencion",
     "dto": "no",
     "pagination": "no",

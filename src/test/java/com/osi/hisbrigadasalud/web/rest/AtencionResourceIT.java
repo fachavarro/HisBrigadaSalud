@@ -7,12 +7,9 @@ import com.osi.hisbrigadasalud.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -26,13 +23,11 @@ import java.time.LocalDate;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.osi.hisbrigadasalud.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
-import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -189,6 +184,12 @@ public class AtencionResourceIT {
     private static final String DEFAULT_DIAGNOSTICO_SECUNDARIO = "AAAAAAAAAA";
     private static final String UPDATED_DIAGNOSTICO_SECUNDARIO = "BBBBBBBBBB";
 
+    private static final String[] DEFAULT_MEDICAMENTOS = new String[] {"AAAAAAAAAA"};
+    private static final String[] UPDATED_MEDICAMENTOS = new String[] {"BBBBBBBBBB"};
+
+    private static final String[] DEFAULT_PROCEDIMIENTOS = new String[] {"AAAAAAAAAA"};
+    private static final String[] UPDATED_PROCEDIMIENTOS = new String[] {"BBBBBBBBBB"};
+
     private static final String DEFAULT_OBSERVACIONES_TRATAMIENTO = "AAAAAAAAAA";
     private static final String UPDATED_OBSERVACIONES_TRATAMIENTO = "BBBBBBBBBB";
 
@@ -206,9 +207,6 @@ public class AtencionResourceIT {
 
     @Autowired
     private AtencionRepository atencionRepository;
-
-    @Mock
-    private AtencionRepository atencionRepositoryMock;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -295,6 +293,8 @@ public class AtencionResourceIT {
             .valoracionNutricional(DEFAULT_VALORACION_NUTRICIONAL)
             .diagnosticoPrincipal(DEFAULT_DIAGNOSTICO_PRINCIPAL)
             .diagnosticoSecundario(DEFAULT_DIAGNOSTICO_SECUNDARIO)
+            .medicamentos(DEFAULT_MEDICAMENTOS)
+            .procedimientos(DEFAULT_PROCEDIMIENTOS)
             .observacionesTratamiento(DEFAULT_OBSERVACIONES_TRATAMIENTO)
             .recomendaciones(DEFAULT_RECOMENDACIONES)
             .destino(DEFAULT_DESTINO)
@@ -359,6 +359,8 @@ public class AtencionResourceIT {
             .valoracionNutricional(UPDATED_VALORACION_NUTRICIONAL)
             .diagnosticoPrincipal(UPDATED_DIAGNOSTICO_PRINCIPAL)
             .diagnosticoSecundario(UPDATED_DIAGNOSTICO_SECUNDARIO)
+            .medicamentos(UPDATED_MEDICAMENTOS)
+            .procedimientos(UPDATED_PROCEDIMIENTOS)
             .observacionesTratamiento(UPDATED_OBSERVACIONES_TRATAMIENTO)
             .recomendaciones(UPDATED_RECOMENDACIONES)
             .destino(UPDATED_DESTINO)
@@ -436,6 +438,8 @@ public class AtencionResourceIT {
         assertThat(testAtencion.getValoracionNutricional()).isEqualTo(DEFAULT_VALORACION_NUTRICIONAL);
         assertThat(testAtencion.getDiagnosticoPrincipal()).isEqualTo(DEFAULT_DIAGNOSTICO_PRINCIPAL);
         assertThat(testAtencion.getDiagnosticoSecundario()).isEqualTo(DEFAULT_DIAGNOSTICO_SECUNDARIO);
+        assertThat(testAtencion.getMedicamentos()).isEqualTo(DEFAULT_MEDICAMENTOS);
+        assertThat(testAtencion.getProcedimientos()).isEqualTo(DEFAULT_PROCEDIMIENTOS);
         assertThat(testAtencion.getObservacionesTratamiento()).isEqualTo(DEFAULT_OBSERVACIONES_TRATAMIENTO);
         assertThat(testAtencion.getRecomendaciones()).isEqualTo(DEFAULT_RECOMENDACIONES);
         assertThat(testAtencion.getDestino()).isEqualTo(DEFAULT_DESTINO);
@@ -555,6 +559,8 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.[*].valoracionNutricional").value(hasItem(DEFAULT_VALORACION_NUTRICIONAL.toString())))
             .andExpect(jsonPath("$.[*].diagnosticoPrincipal").value(hasItem(DEFAULT_DIAGNOSTICO_PRINCIPAL.toString())))
             .andExpect(jsonPath("$.[*].diagnosticoSecundario").value(hasItem(DEFAULT_DIAGNOSTICO_SECUNDARIO.toString())))
+            .andExpect(jsonPath("$.[*].medicamentos").value(hasItem(DEFAULT_MEDICAMENTOS.toString())))
+            .andExpect(jsonPath("$.[*].procedimientos").value(hasItem(DEFAULT_PROCEDIMIENTOS.toString())))
             .andExpect(jsonPath("$.[*].observacionesTratamiento").value(hasItem(DEFAULT_OBSERVACIONES_TRATAMIENTO.toString())))
             .andExpect(jsonPath("$.[*].recomendaciones").value(hasItem(DEFAULT_RECOMENDACIONES.toString())))
             .andExpect(jsonPath("$.[*].destino").value(hasItem(DEFAULT_DESTINO.toString())))
@@ -562,39 +568,6 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }
     
-    @SuppressWarnings({"unchecked"})
-    public void getAllAtencionsWithEagerRelationshipsIsEnabled() throws Exception {
-        AtencionResource atencionResource = new AtencionResource(atencionRepositoryMock);
-        when(atencionRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        MockMvc restAtencionMockMvc = MockMvcBuilders.standaloneSetup(atencionResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
-
-        restAtencionMockMvc.perform(get("/api/atencions?eagerload=true"))
-        .andExpect(status().isOk());
-
-        verify(atencionRepositoryMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    @SuppressWarnings({"unchecked"})
-    public void getAllAtencionsWithEagerRelationshipsIsNotEnabled() throws Exception {
-        AtencionResource atencionResource = new AtencionResource(atencionRepositoryMock);
-            when(atencionRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-            MockMvc restAtencionMockMvc = MockMvcBuilders.standaloneSetup(atencionResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
-
-        restAtencionMockMvc.perform(get("/api/atencions?eagerload=true"))
-        .andExpect(status().isOk());
-
-            verify(atencionRepositoryMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
     @Test
     public void getAtencion() throws Exception {
         // Initialize the database
@@ -654,6 +627,8 @@ public class AtencionResourceIT {
             .andExpect(jsonPath("$.valoracionNutricional").value(DEFAULT_VALORACION_NUTRICIONAL.toString()))
             .andExpect(jsonPath("$.diagnosticoPrincipal").value(DEFAULT_DIAGNOSTICO_PRINCIPAL.toString()))
             .andExpect(jsonPath("$.diagnosticoSecundario").value(DEFAULT_DIAGNOSTICO_SECUNDARIO.toString()))
+            .andExpect(jsonPath("$.medicamentos").value(DEFAULT_MEDICAMENTOS.toString()))
+            .andExpect(jsonPath("$.procedimientos").value(DEFAULT_PROCEDIMIENTOS.toString()))
             .andExpect(jsonPath("$.observacionesTratamiento").value(DEFAULT_OBSERVACIONES_TRATAMIENTO.toString()))
             .andExpect(jsonPath("$.recomendaciones").value(DEFAULT_RECOMENDACIONES.toString()))
             .andExpect(jsonPath("$.destino").value(DEFAULT_DESTINO.toString()))
@@ -727,6 +702,8 @@ public class AtencionResourceIT {
             .valoracionNutricional(UPDATED_VALORACION_NUTRICIONAL)
             .diagnosticoPrincipal(UPDATED_DIAGNOSTICO_PRINCIPAL)
             .diagnosticoSecundario(UPDATED_DIAGNOSTICO_SECUNDARIO)
+            .medicamentos(UPDATED_MEDICAMENTOS)
+            .procedimientos(UPDATED_PROCEDIMIENTOS)
             .observacionesTratamiento(UPDATED_OBSERVACIONES_TRATAMIENTO)
             .recomendaciones(UPDATED_RECOMENDACIONES)
             .destino(UPDATED_DESTINO)
@@ -791,6 +768,8 @@ public class AtencionResourceIT {
         assertThat(testAtencion.getValoracionNutricional()).isEqualTo(UPDATED_VALORACION_NUTRICIONAL);
         assertThat(testAtencion.getDiagnosticoPrincipal()).isEqualTo(UPDATED_DIAGNOSTICO_PRINCIPAL);
         assertThat(testAtencion.getDiagnosticoSecundario()).isEqualTo(UPDATED_DIAGNOSTICO_SECUNDARIO);
+        assertThat(testAtencion.getMedicamentos()).isEqualTo(UPDATED_MEDICAMENTOS);
+        assertThat(testAtencion.getProcedimientos()).isEqualTo(UPDATED_PROCEDIMIENTOS);
         assertThat(testAtencion.getObservacionesTratamiento()).isEqualTo(UPDATED_OBSERVACIONES_TRATAMIENTO);
         assertThat(testAtencion.getRecomendaciones()).isEqualTo(UPDATED_RECOMENDACIONES);
         assertThat(testAtencion.getDestino()).isEqualTo(UPDATED_DESTINO);

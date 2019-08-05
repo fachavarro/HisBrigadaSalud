@@ -50,7 +50,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190802163722",
+    "changelogDate": "20190802223336",
     "entityTableName": "brigada",
     "dto": "no",
     "pagination": "no",

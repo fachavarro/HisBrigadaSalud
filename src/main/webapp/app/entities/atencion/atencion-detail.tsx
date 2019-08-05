@@ -333,6 +333,18 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
             </dt>
             <dd>{atencionEntity.diagnosticoSecundario}</dd>
             <dt>
+              <span id="medicamentos">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
+              </span>
+            </dt>
+            <dd>{atencionEntity.medicamentos}</dd>
+            <dt>
+              <span id="procedimientos">
+                <Translate contentKey="hisBrigadaSaludApp.atencion.procedimientos">Procedimientos</Translate>
+              </span>
+            </dt>
+            <dd>{atencionEntity.procedimientos}</dd>
+            <dt>
               <span id="observacionesTratamiento">
                 <Translate contentKey="hisBrigadaSaludApp.atencion.observacionesTratamiento">Observaciones Tratamiento</Translate>
               </span>
@@ -378,32 +390,6 @@ export class AtencionDetail extends React.Component<IAtencionDetailProps> {
               <Translate contentKey="hisBrigadaSaludApp.atencion.usuario">Usuario</Translate>
             </dt>
             <dd>{atencionEntity.usuario ? atencionEntity.usuario.nombre : ''}</dd>
-            <dt>
-              <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
-            </dt>
-            <dd>
-              {atencionEntity.medicamentos
-                ? atencionEntity.medicamentos.map((val, i) => (
-                    <span key={val.id}>
-                      <a>{val.nombreMedicamento}</a>
-                      {i === atencionEntity.medicamentos.length - 1 ? '' : ', '}
-                    </span>
-                  ))
-                : null}
-            </dd>
-            <dt>
-              <Translate contentKey="hisBrigadaSaludApp.atencion.procedimientos">Procedimientos</Translate>
-            </dt>
-            <dd>
-              {atencionEntity.procedimientos
-                ? atencionEntity.procedimientos.map((val, i) => (
-                    <span key={val.id}>
-                      <a>{val.nombreProcedimiento}</a>
-                      {i === atencionEntity.procedimientos.length - 1 ? '' : ', '}
-                    </span>
-                  ))
-                : null}
-            </dd>
           </dl>
           <Button tag={Link} to="/entity/atencion" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}

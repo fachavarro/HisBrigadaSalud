@@ -108,7 +108,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190802163725",
+    "changelogDate": "20190802223339",
     "entityTableName": "paciente",
     "dto": "no",
     "pagination": "no",

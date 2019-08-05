@@ -50,14 +50,6 @@ entity Paciente {
     updatedAt Instant,
 }
 
-entity Medicamento {
-	nombreMedicamento String
-}
-
-entity Procedimiento {
-	nombreProcedimiento String
-}
-
 entity Atencion{
 	fecha Instant required,
 	especialidad String required,
@@ -119,6 +111,8 @@ entity Atencion{
     diagnosticoPrincipal String,
     diagnosticoSecundario String,
     
+    medicamentos String,
+    procedimientos String,
     observacionesTratamiento String maxlength(1000),
     recomendaciones String maxlength(2000),
     destino String,
@@ -130,11 +124,6 @@ relationship OneToOne {
 	Atencion{brigada(descripcion)} to Brigada,
     Atencion{paciente(nombre)} to Paciente,
     Atencion{usuario(nombre)} to Usuario   
-}
-
-relationship ManyToMany {
-	Atencion{medicamentos(nombreMedicamento)} to Medicamento{Atencion},
-    Atencion{procedimientos(nombreProcedimiento)} to Procedimiento{Atencion}
 }
 
 

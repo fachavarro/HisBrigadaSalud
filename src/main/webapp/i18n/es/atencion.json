@@ -65,6 +65,8 @@
       "valoracionNutricional": "Valoracion Nutricional",
       "diagnosticoPrincipal": "Diagnostico Principal",
       "diagnosticoSecundario": "Diagnostico Secundario",
+      "medicamentos": "Medicamentos",
+      "procedimientos": "Procedimientos",
       "observacionesTratamiento": "Observaciones Tratamiento",
       "recomendaciones": "Recomendaciones",
       "destino": "Destino",
@@ -72,9 +74,7 @@
       "updatedAt": "Updated At",
       "brigada": "Brigada",
       "paciente": "Paciente",
-      "usuario": "Usuario",
-      "medicamentos": "Medicamentos",
-      "procedimientos": "Procedimientos"
+      "usuario": "Usuario"
     }
   }
 }

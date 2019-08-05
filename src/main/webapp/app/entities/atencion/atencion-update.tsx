@@ -14,10 +14,6 @@ import { IPaciente } from 'app/shared/model/paciente.model';
 import { getEntities as getPacientes } from 'app/entities/paciente/paciente.reducer';
 import { IUsuario } from 'app/shared/model/usuario.model';
 import { getEntities as getUsuarios } from 'app/entities/usuario/usuario.reducer';
-import { IMedicamento } from 'app/shared/model/medicamento.model';
-import { getEntities as getMedicamentos } from 'app/entities/medicamento/medicamento.reducer';
-import { IProcedimiento } from 'app/shared/model/procedimiento.model';
-import { getEntities as getProcedimientos } from 'app/entities/procedimiento/procedimiento.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './atencion.reducer';
 import { IAtencion } from 'app/shared/model/atencion.model';
 // tslint:disable-next-line:no-unused-variable
@@ -28,8 +24,6 @@ export interface IAtencionUpdateProps extends StateProps, DispatchProps, RouteCo
 
 export interface IAtencionUpdateState {
   isNew: boolean;
-  idsmedicamentos: any[];
-  idsprocedimientos: any[];
   brigadaId: string;
   pacienteId: string;
   usuarioId: string;
@@ -39,8 +33,6 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
   constructor(props) {
     super(props);
     this.state = {
-      idsmedicamentos: [],
-      idsprocedimientos: [],
       brigadaId: '0',
       pacienteId: '0',
       usuarioId: '0',
@@ -64,8 +56,6 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
     this.props.getBrigadas();
     this.props.getPacientes();
     this.props.getUsuarios();
-    this.props.getMedicamentos();
-    this.props.getProcedimientos();
   }
 
   saveEntity = (event, errors, values) => {
@@ -77,9 +67,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
       const { atencionEntity } = this.props;
       const entity = {
         ...atencionEntity,
-        ...values,
-        medicamentos: mapIdList(values.medicamentos),
-        procedimientos: mapIdList(values.procedimientos)
+        ...values
       };
 
       if (this.state.isNew) {
@@ -95,7 +83,7 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
   };
 
   render() {
-    const { atencionEntity, brigadas, pacientes, usuarios, medicamentos, procedimientos, loading, updating } = this.props;
+    const { atencionEntity, brigadas, pacientes, usuarios, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -531,6 +519,18 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                   <AvField id="atencion-diagnosticoSecundario" type="text" name="diagnosticoSecundario" />
                 </AvGroup>
                 <AvGroup>
+                  <Label id="medicamentosLabel" for="atencion-medicamentos">
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
+                  </Label>
+                  <AvField id="atencion-medicamentos" type="text" name="medicamentos" />
+                </AvGroup>
+                <AvGroup>
+                  <Label id="procedimientosLabel" for="atencion-procedimientos">
+                    <Translate contentKey="hisBrigadaSaludApp.atencion.procedimientos">Procedimientos</Translate>
+                  </Label>
+                  <AvField id="atencion-procedimientos" type="text" name="procedimientos" />
+                </AvGroup>
+                <AvGroup>
                   <Label id="observacionesTratamientoLabel" for="atencion-observacionesTratamiento">
                     <Translate contentKey="hisBrigadaSaludApp.atencion.observacionesTratamiento">Observaciones Tratamiento</Translate>
                   </Label>
@@ -633,50 +633,6 @@ export class AtencionUpdate extends React.Component<IAtencionUpdateProps, IAtenc
                       : null}
                   </AvInput>
                 </AvGroup>
-                <AvGroup>
-                  <Label for="atencion-medicamentos">
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.medicamentos">Medicamentos</Translate>
-                  </Label>
-                  <AvInput
-                    id="atencion-medicamentos"
-                    type="select"
-                    multiple
-                    className="form-control"
-                    name="medicamentos"
-                    value={atencionEntity.medicamentos && atencionEntity.medicamentos.map(e => e.id)}
-                  >
-                    <option value="" key="0" />
-                    {medicamentos
-                      ? medicamentos.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.nombreMedicamento}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
-                <AvGroup>
-                  <Label for="atencion-procedimientos">
-                    <Translate contentKey="hisBrigadaSaludApp.atencion.procedimientos">Procedimientos</Translate>
-                  </Label>
-                  <AvInput
-                    id="atencion-procedimientos"
-                    type="select"
-                    multiple
-                    className="form-control"
-                    name="procedimientos"
-                    value={atencionEntity.procedimientos && atencionEntity.procedimientos.map(e => e.id)}
-                  >
-                    <option value="" key="0" />
-                    {procedimientos
-                      ? procedimientos.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.nombreProcedimiento}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/atencion" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;
@@ -703,8 +659,6 @@ const mapStateToProps = (storeState: IRootState) => ({
   brigadas: storeState.brigada.entities,
   pacientes: storeState.paciente.entities,
   usuarios: storeState.usuario.entities,
-  medicamentos: storeState.medicamento.entities,
-  procedimientos: storeState.procedimiento.entities,
   atencionEntity: storeState.atencion.entity,
   loading: storeState.atencion.loading,
   updating: storeState.atencion.updating,
@@ -715,8 +669,6 @@ const mapDispatchToProps = {
   getBrigadas,
   getPacientes,
   getUsuarios,
-  getMedicamentos,
-  getProcedimientos,
   getEntity,
   updateEntity,
   createEntity,
