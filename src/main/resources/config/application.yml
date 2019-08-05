@@ -120,7 +120,7 @@ jhipster:
     default-include-pattern: /api/.*
     title: HisBrigadaSalud API
     description: HisBrigadaSalud API documentation
-    version: 0.0.1
+    version: 1.0.0
     terms-of-service-url:
     contact-name:
     contact-url:
