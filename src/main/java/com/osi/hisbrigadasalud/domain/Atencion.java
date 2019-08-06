@@ -2,7 +2,6 @@ package com.osi.hisbrigadasalud.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
@@ -203,15 +202,15 @@ public class Atencion implements Serializable {
     @Field("updated_at")
     private Instant updatedAt;
 
-    @DBRef
+    
     @Field("brigada")
     private Brigada brigada;
 
-    @DBRef
+    
     @Field("paciente")
     private Paciente paciente;
 
-    @DBRef
+    
     @Field("usuario")
     private Usuario usuario;
 
