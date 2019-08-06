@@ -15,9 +15,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing {@link com.osi.hisbrigadasalud.domain.Atencion}.
@@ -114,5 +118,21 @@ public class AtencionResource {
         log.debug("REST request to delete Atencion : {}", id);
         atencionRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id)).build();
+    }
+    
+    @GetMapping("/atencions/{tipoDoc}/{numeroDocumento}")
+    public List<Atencion> getAllAtencionsByPaciente(@PathVariable String tipoDoc, @PathVariable String numeroDocumento ) {
+        log.debug("REST request to get all Atencions by Paciente: "+tipoDoc+" "+numeroDocumento);
+        
+        List<Atencion> list = StreamSupport
+                .stream(atencionRepository.findAll().spliterator(), false)
+                .filter(atencion -> atencion.getPaciente().getTipoDoc().equalsIgnoreCase(tipoDoc) && atencion.getPaciente().getNumeroDocumento().equals(numeroDocumento))
+                .collect(Collectors.toList());
+        
+        List<Atencion> result = list.stream().sorted((a1, a2)->a2.getFecha().
+                compareTo(a1.getFecha())).
+                collect(Collectors.toList());
+        
+        return result;
     }
 }
